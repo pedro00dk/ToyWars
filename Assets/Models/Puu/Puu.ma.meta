@@ -1,0 +1,415 @@
+fileFormatVersion: 2
+guid: a939c2143c35d824599d1e6f9f855960
+timeCreated: 1473958325
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Body
+    100002: joint10
+    100004: joint11
+    100006: joint12
+    100008: joint12 1
+    100010: joint13
+    100012: joint13 1
+    100014: joint14
+    100016: joint2
+    100018: joint3
+    100020: joint4
+    100022: joint5
+    100024: joint6
+    100026: joint7
+    100028: joint7 1
+    100030: joint8
+    100032: joint8 1
+    100034: joint9
+    100036: joint9 1
+    100038: Joints
+    100040: LeftEye
+    100042: Locator
+    100044: Nose
+    100046: //RootNode
+    100048: Puu
+    100050: RightEye
+    100052: Column
+    100054: HighNeck
+    100056: LeftArm
+    100058: LeftArm 1
+    100060: LeftElbow
+    100062: LeftElbow 1
+    100064: LeftFoot
+    100066: LeftHip
+    100068: LeftKnee
+    100070: LeftPulse
+    100072: LeftPulse 1
+    100074: LeftShoulder
+    100076: LowNeck
+    100078: RightFoot
+    100080: RightHip
+    100082: RightKnee
+    100084: RightShoulder
+    100086: RootJoint
+    100088: TopHead
+    400000: Body
+    400002: joint10
+    400004: joint11
+    400006: joint12
+    400008: joint12 1
+    400010: joint13
+    400012: joint13 1
+    400014: joint14
+    400016: joint2
+    400018: joint3
+    400020: joint4
+    400022: joint5
+    400024: joint6
+    400026: joint7
+    400028: joint7 1
+    400030: joint8
+    400032: joint8 1
+    400034: joint9
+    400036: joint9 1
+    400038: Joints
+    400040: LeftEye
+    400042: Locator
+    400044: Nose
+    400046: //RootNode
+    400048: Puu
+    400050: RightEye
+    400052: Column
+    400054: HighNeck
+    400056: LeftArm
+    400058: LeftArm 1
+    400060: LeftElbow
+    400062: LeftElbow 1
+    400064: LeftFoot
+    400066: LeftHip
+    400068: LeftKnee
+    400070: LeftPulse
+    400072: LeftPulse 1
+    400074: LeftShoulder
+    400076: LowNeck
+    400078: RightFoot
+    400080: RightHip
+    400082: RightKnee
+    400084: RightShoulder
+    400086: RootJoint
+    400088: TopHead
+    4300000: Body
+    4300002: Nose
+    4300004: LeftEye
+    4300006: RightEye
+    7400000: StartWalk
+    7400002: CicleWalk
+    7400004: Idle
+    7400006: StartWalk
+    7400008: CycleWalk
+    9500000: //RootNode
+    13700000: Body
+    13700002: LeftEye
+    13700004: Nose
+    13700006: RightEye
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Locator
+        weight: 1
+      - path: Puu
+        weight: 1
+      - path: Puu/Body
+        weight: 1
+      - path: Puu/LeftEye
+        weight: 1
+      - path: Puu/Nose
+        weight: 1
+      - path: Puu/RightEye
+        weight: 1
+      - path: RootJoint
+        weight: 1
+      - path: RootJoint/Column
+        weight: 1
+      - path: RootJoint/Column/LeftShoulder
+        weight: 1
+      - path: RootJoint/Column/LeftShoulder/LeftArm
+        weight: 1
+      - path: RootJoint/Column/LeftShoulder/LeftArm/LeftElbow
+        weight: 1
+      - path: RootJoint/Column/LeftShoulder/LeftArm/LeftElbow/LeftPulse
+        weight: 1
+      - path: RootJoint/Column/LowNeck
+        weight: 1
+      - path: RootJoint/Column/LowNeck/HighNeck
+        weight: 1
+      - path: RootJoint/Column/LowNeck/HighNeck/TopHead
+        weight: 1
+      - path: RootJoint/Column/RightShoulder
+        weight: 1
+      - path: RootJoint/Column/RightShoulder/LeftArm 1
+        weight: 1
+      - path: RootJoint/Column/RightShoulder/LeftArm 1/LeftElbow 1
+        weight: 1
+      - path: RootJoint/Column/RightShoulder/LeftArm 1/LeftElbow 1/LeftPulse 1
+        weight: 1
+      - path: RootJoint/LeftHip
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnee
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnee/LeftFoot
+        weight: 1
+      - path: RootJoint/RightHip
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee/RightFoot
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.9
+    - serializedVersion: 16
+      name: StartWalk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Locator
+        weight: 1
+      - path: Puu
+        weight: 1
+      - path: Puu/Body
+        weight: 1
+      - path: Puu/LeftEye
+        weight: 1
+      - path: Puu/Nose
+        weight: 1
+      - path: Puu/RightEye
+        weight: 1
+      - path: RootJoint
+        weight: 1
+      - path: RootJoint/Column
+        weight: 1
+      - path: RootJoint/Column/LeftShoulder
+        weight: 1
+      - path: RootJoint/Column/LeftShoulder/LeftArm
+        weight: 1
+      - path: RootJoint/Column/LeftShoulder/LeftArm/LeftElbow
+        weight: 1
+      - path: RootJoint/Column/LeftShoulder/LeftArm/LeftElbow/LeftPulse
+        weight: 1
+      - path: RootJoint/Column/LowNeck
+        weight: 1
+      - path: RootJoint/Column/LowNeck/HighNeck
+        weight: 1
+      - path: RootJoint/Column/LowNeck/HighNeck/TopHead
+        weight: 1
+      - path: RootJoint/Column/RightShoulder
+        weight: 1
+      - path: RootJoint/Column/RightShoulder/LeftArm 1
+        weight: 1
+      - path: RootJoint/Column/RightShoulder/LeftArm 1/LeftElbow 1
+        weight: 1
+      - path: RootJoint/Column/RightShoulder/LeftArm 1/LeftElbow 1/LeftPulse 1
+        weight: 1
+      - path: RootJoint/LeftHip
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnee
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnee/LeftFoot
+        weight: 1
+      - path: RootJoint/RightHip
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee/RightFoot
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.9
+    - serializedVersion: 16
+      name: CycleWalk
+      takeName: Take 001
+      firstFrame: 5
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Locator
+        weight: 1
+      - path: Puu
+        weight: 1
+      - path: Puu/Body
+        weight: 1
+      - path: Puu/LeftEye
+        weight: 1
+      - path: Puu/Nose
+        weight: 1
+      - path: Puu/RightEye
+        weight: 1
+      - path: RootJoint
+        weight: 1
+      - path: RootJoint/Column
+        weight: 1
+      - path: RootJoint/Column/LeftShoulder
+        weight: 1
+      - path: RootJoint/Column/LeftShoulder/LeftArm
+        weight: 1
+      - path: RootJoint/Column/LeftShoulder/LeftArm/LeftElbow
+        weight: 1
+      - path: RootJoint/Column/LeftShoulder/LeftArm/LeftElbow/LeftPulse
+        weight: 1
+      - path: RootJoint/Column/LowNeck
+        weight: 1
+      - path: RootJoint/Column/LowNeck/HighNeck
+        weight: 1
+      - path: RootJoint/Column/LowNeck/HighNeck/TopHead
+        weight: 1
+      - path: RootJoint/Column/RightShoulder
+        weight: 1
+      - path: RootJoint/Column/RightShoulder/LeftArm 1
+        weight: 1
+      - path: RootJoint/Column/RightShoulder/LeftArm 1/LeftElbow 1
+        weight: 1
+      - path: RootJoint/Column/RightShoulder/LeftArm 1/LeftElbow 1/LeftPulse 1
+        weight: 1
+      - path: RootJoint/LeftHip
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnee
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnee/LeftFoot
+        weight: 1
+      - path: RootJoint/RightHip
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee/RightFoot
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.9
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
