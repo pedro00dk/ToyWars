@@ -59,7 +59,7 @@ public class Puu : MonoBehaviour {
 
 	void LateUpdate() {
 		// Y rotation (runs after animation)
-		float rotation = Input.GetAxis("Mouse Y") * sensibility.y * Time.deltaTime;
+		float rotation = -Input.GetAxis("Mouse Y") * sensibility.y * Time.deltaTime;
 		columnIndependentJointLocalEulerAngles = new Vector3(
 			Mathf.Clamp(
 				columnIndependentJointLocalEulerAngles.x + rotation,
