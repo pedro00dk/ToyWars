@@ -35,11 +35,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013412011544}
   - 95: {fileID: 95000011398676264}
-  - 82: {fileID: 82000013008344150}
-  - 82: {fileID: 82000013058783148}
-  - 114: {fileID: 114000012243670672}
+  - 136: {fileID: 136000012593693208}
+  - 82: {fileID: 82000013353378470}
+  - 82: {fileID: 82000010852459120}
+  - 114: {fileID: 114000013399624164}
+  - 114: {fileID: 114000010222368282}
   m_Layer: 0
-  m_Name: Puu'sGun
+  m_Name: Puu'sMinigun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +56,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011676090558}
   m_Layer: 0
-  m_Name: EffectsRendererPivot
+  m_Name: ShootEffectsRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +89,7 @@ GameObject:
   - 4: {fileID: 4000012295978134}
   - 108: {fileID: 108000011377789602}
   m_Layer: 0
-  m_Name: EffectLight
+  m_Name: FlashLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +105,7 @@ GameObject:
   - 4: {fileID: 4000011164113702}
   - 212: {fileID: 212000013293619262}
   m_Layer: 0
-  m_Name: EffectsRenderer1
+  m_Name: Renderer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,7 +138,7 @@ GameObject:
   - 4: {fileID: 4000010337292318}
   - 212: {fileID: 212000010783132330}
   m_Layer: 0
-  m_Name: EffectsRenderer2
+  m_Name: Renderer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013758521020}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0, y: -0, z: -1.21}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
   m_Children: []
@@ -162,7 +164,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011790401036}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: -0, z: -1.21}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children: []
@@ -190,7 +192,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010410810298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.22, y: 0.45, z: -32.57}
+  m_LocalPosition: {x: 0.22, y: 0.45, z: -32.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -217,10 +219,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010746126742}
-  m_LocalRotation: {x: -0.42040694, y: 0.8533653, z: 0.2882476, w: 0.109266005}
-  m_LocalPosition: {x: -1.17, y: 1.46, z: -0.47}
-  m_LocalScale: {x: 0.3542745, y: 0.35427445, z: 0.35427442}
-  m_LocalEulerAnglesHint: {x: -35.713, y: -176.167, z: -53.482002}
+  m_LocalRotation: {x: 0.091998614, y: -0.000000037252896, z: -0.000000078231075,
+    w: 0.9957591}
+  m_LocalPosition: {x: -0.061, y: 0, z: -0.07}
+  m_LocalScale: {x: 0.0575, y: 0.057500005, z: -0.057500005}
+  m_LocalEulerAnglesHint: {x: 10.501, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013639468846}
   - {fileID: 4000013622799414}
@@ -325,7 +328,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011039071168}
   m_Mesh: {fileID: 4300002, guid: daf783a781055b24481e92f86559fd12, type: 3}
---- !u!82 &82000013008344150
+--- !u!82 &82000010852459120
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -336,7 +339,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -399,7 +402,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!82 &82000013058783148
+--- !u!82 &82000013353378470
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -410,7 +413,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.08
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -524,7 +527,7 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114000012243670672
+--- !u!114 &114000010222368282
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -535,21 +538,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd16414aeeb6c54da157b43bb3fffe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 12
-  flashTime: 0.06
   barrelOut: {fileID: 4000011909036450}
-  effectsRenderer1: {fileID: 212000013293619262}
-  effectsRenderer2: {fileID: 212000010783132330}
-  lightEffect: {fileID: 108000011377789602}
+  shootFlashTime: 0.03
+  shootEffectsRenderers:
+  - {fileID: 212000013293619262}
+  - {fileID: 212000010783132330}
   shootRandomSpriteEffects:
   - {fileID: 21300000, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
   - {fileID: 21300002, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
   - {fileID: 21300004, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
   - {fileID: 21300006, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
-  accelSound: {fileID: 8300000, guid: 5d17555d10e52d045b3aaa384ed91501, type: 3}
-  desaccelSound: {fileID: 8300000, guid: 92350b24da17d8a45ae4561599652ebe, type: 3}
-  rotateSound: {fileID: 8300000, guid: 3747803957a28c241848762256f9fc71, type: 3}
-  shootSound: {fileID: 8300000, guid: 9fc66e61954bdab4783ce5afbd15ed30, type: 3}
+  flashLightEffect: {fileID: 108000011377789602}
+  accelelerationClip: {fileID: 8300000, guid: 5d17555d10e52d045b3aaa384ed91501, type: 3}
+  desaccelelerationClip: {fileID: 8300000, guid: 92350b24da17d8a45ae4561599652ebe,
+    type: 3}
+  rotationClip: {fileID: 8300000, guid: 3747803957a28c241848762256f9fc71, type: 3}
+  shootClip: {fileID: 8300000, guid: 49ea538c2b6a55941a544a0397840331, type: 3}
+--- !u!114 &114000013399624164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010746126742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a11a24975313fe40a3bedab96d74de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toy: {fileID: 0}
+  damage: 1
+  fireRate: 25
+  magazine: 100
+  regeneration: 3
+--- !u!136 &136000012593693208
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010746126742}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3.64
+  m_Height: 29.3
+  m_Direction: 2
+  m_Center: {x: 0.29, y: -0.66, z: -18.57}
 --- !u!212 &212000010783132330
 SpriteRenderer:
   m_ObjectHideFlags: 1
