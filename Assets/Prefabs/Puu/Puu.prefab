@@ -1479,7 +1479,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columnJoint: {fileID: 4000012055233408}
   cameraColumnJoint: {fileID: 4000010101879282}
+  locator: {fileID: 4000012974076588}
   speed: 5
+  jumpSpeed: 2
   sensibility: {x: 100, y: 100}
   yRotationUpDown: {x: 70, y: 20}
 --- !u!124 &124000010296274284
