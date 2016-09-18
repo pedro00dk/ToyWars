@@ -221,8 +221,8 @@ Transform:
   m_GameObject: {fileID: 1000010746126742}
   m_LocalRotation: {x: 0.091998614, y: -0.000000037252896, z: -0.000000078231075,
     w: 0.9957591}
-  m_LocalPosition: {x: -0.061, y: 0, z: -0.07}
-  m_LocalScale: {x: 0.0575, y: 0.057500005, z: -0.057500005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: -0.05}
   m_LocalEulerAnglesHint: {x: 10.501, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013639468846}
@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toy: {fileID: 0}
-  damage: 1
+  damage: 2.5
   fireRate: 25
   magazine: 100
   regeneration: 3

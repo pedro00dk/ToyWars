@@ -33,6 +33,8 @@ public class PuusMinigun : MonoBehaviour {
 	float triggeredTime;
 	float lastShootTime;
 
+	//
+
 	void Start() {
 		toyWeapon = GetComponent<ToyWeapon>();
 		animator = GetComponent<Animator>();

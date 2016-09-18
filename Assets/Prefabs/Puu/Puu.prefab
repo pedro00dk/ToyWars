@@ -265,8 +265,8 @@ GameObject:
   - 95: {fileID: 95000010661025336}
   - 65: {fileID: 65000010996682342}
   - 54: {fileID: 54000010515802006}
-  - 114: {fileID: 114000010574106006}
   - 114: {fileID: 114000011513854982}
+  - 114: {fileID: 114000010574106006}
   m_Layer: 0
   m_Name: Puu
   m_TagString: Untagged
@@ -679,10 +679,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011417996394}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.7553369, z: -0, w: 0.65533674}
+  m_LocalPosition: {x: 3.25, y: 0, z: -3.86}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -97.892006, z: 0}
   m_Children:
   - {fileID: 4000013830218114}
   - {fileID: 4000010706564550}
@@ -1832,6 +1832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spineJoint: {fileID: 4000012055233408}
+  lateralSpineAxis: {x: 1, y: 0, z: 0}
   toyLocator: {fileID: 4000012974076588}
   camSpineParent: {fileID: 4000010101879282}
   camera: {fileID: 20000014004631942}
@@ -1974,7 +1975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toy: {fileID: 114000011513854982}
-  damage: 1
+  damage: 2.5
   fireRate: 25
   magazine: 100
   regeneration: 3

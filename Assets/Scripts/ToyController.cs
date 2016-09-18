@@ -4,10 +4,12 @@ using System.Collections;
 [RequireComponent(typeof(Toy))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Collider))]
 public class ToyController : MonoBehaviour {
 
 	[Header("Skeleton components")]
 	public Transform spineJoint;
+	public Vector3 lateralSpineAxis;
 	public Transform toyLocator;
 
 	[Header("Camera components")]
@@ -28,6 +30,7 @@ public class ToyController : MonoBehaviour {
 	Toy toy;
 	Animator animator;
 	Rigidbody body;
+	Collider contact;
 
 	// Animator properties
 	bool walking = false;
@@ -41,7 +44,7 @@ public class ToyController : MonoBehaviour {
 
 	// Smooths and temps
 	Vector3 smoothMovementVelocity;
-	Vector3 spineUpdateEulerAngles;
+	float spineUpdateEulerAngles;
 
 	//
 
@@ -49,6 +52,7 @@ public class ToyController : MonoBehaviour {
 		toy = GetComponent<Toy>();
 		animator = GetComponent<Animator>();
 		body = GetComponent<Rigidbody>();
+		contact = GetComponent<Collider>();
 
 		SetAnimationProperties();
 	}
@@ -62,7 +66,6 @@ public class ToyController : MonoBehaviour {
 		walking = movementAxis.sqrMagnitude > 0;
 
 		// Jump check
-		grounded = Physics.Raycast(toyLocator.position + Vector3.up * 0.1f, Vector3.down, 0.2f);
 		jumping = grounded ? Input.GetAxisRaw("Jump") * jumpSpeed : 0;
 
 		// Rotation check
@@ -89,15 +92,13 @@ public class ToyController : MonoBehaviour {
 			                             transform.localEulerAngles.y + rotationAxis.x * Time.deltaTime,
 			                             transform.localEulerAngles.z
 		                             );
-		transform.localEulerAngles = updatedEulerAngles; // Horizontal rotation (over y axis)
-		spineUpdateEulerAngles = new Vector3(Mathf.Clamp(
-			spineUpdateEulerAngles.x - rotationAxis.y * Time.deltaTime,
-			-verticalLimitMinMax.y, verticalLimitMinMax.x),
-			0,
-			0
+		transform.localEulerAngles = updatedEulerAngles; // Horizontal rotation
+		spineUpdateEulerAngles = Mathf.Clamp(spineUpdateEulerAngles - rotationAxis.y * Time.deltaTime,
+			-verticalLimitMinMax.y, verticalLimitMinMax.x
 		);
-		spineJoint.localEulerAngles += spineUpdateEulerAngles; // Vertical rotation (rotation of the spine joint over x)
-		camSpineParent.localEulerAngles = spineUpdateEulerAngles;
+		Vector3 spineJointIncrementEulerAngles = lateralSpineAxis * spineUpdateEulerAngles;
+		spineJoint.localEulerAngles += spineJointIncrementEulerAngles; // Spine rotation
+		camSpineParent.localEulerAngles = Vector3.right * spineUpdateEulerAngles; // Camera rotation
 	}
 
 	void FixedUpdate() {
@@ -123,5 +124,17 @@ public class ToyController : MonoBehaviour {
 		animator.SetBool("walking", walking);
 		animator.SetBool("grounded", grounded);
 		animator.SetBool("dead", dead);
+	}
+
+	void OnCollisionEnter(Collision col) {
+		grounded = true;
+	}
+
+	void OnCollisionStay(Collision col) {
+		grounded = true;
+	}
+
+	void OnCollisionExit(Collision col) {
+		grounded = false;
 	}
 }

@@ -51,7 +51,10 @@ ModelImporter:
     3300000: Mesh
     4300000: Zulu
     4300002: Mesh
-    7400000: Take 001
+    7400000: Idle
+    7400002: Walk
+    7400004: Jump
+    7400006: Dead
     9500000: //RootNode
     13700000: Zulu
   materials:
@@ -60,7 +63,7 @@ ModelImporter:
     materialSearch: 1
   animations:
     legacyGenerateAnimations: 4
-    bakeSimulation: 0
+    bakeSimulation: 1
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
@@ -74,7 +77,279 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 4
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Locator
+        weight: 1
+      - path: RootJoint
+        weight: 1
+      - path: RootJoint/LeftHipJoint
+        weight: 1
+      - path: RootJoint/LeftHipJoint/LeftKneeJoint
+        weight: 1
+      - path: RootJoint/LeftHipJoint/LeftKneeJoint/LeftFootJoint
+        weight: 1
+      - path: RootJoint/RightHipJoint
+        weight: 1
+      - path: RootJoint/RightHipJoint/RightKneeJoint
+        weight: 1
+      - path: RootJoint/RightHipJoint/RightKneeJoint/RightFootJoint
+        weight: 1
+      - path: RootJoint/SpineJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulderJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulderJoint/LeftArmJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulderJoint/LeftArmJoint/LeftHandJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LowNeckJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LowNeckJoint/HighNeckJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LowNeckJoint/HighNeckJoint/HeadJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulderJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulderJoint/RightArmJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulderJoint/RightArmJoint/RightHandJoint
+        weight: 1
+      - path: Zulu
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 5
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Locator
+        weight: 1
+      - path: RootJoint
+        weight: 1
+      - path: RootJoint/LeftHipJoint
+        weight: 1
+      - path: RootJoint/LeftHipJoint/LeftKneeJoint
+        weight: 1
+      - path: RootJoint/LeftHipJoint/LeftKneeJoint/LeftFootJoint
+        weight: 1
+      - path: RootJoint/RightHipJoint
+        weight: 1
+      - path: RootJoint/RightHipJoint/RightKneeJoint
+        weight: 1
+      - path: RootJoint/RightHipJoint/RightKneeJoint/RightFootJoint
+        weight: 1
+      - path: RootJoint/SpineJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulderJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulderJoint/LeftArmJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulderJoint/LeftArmJoint/LeftHandJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LowNeckJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LowNeckJoint/HighNeckJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LowNeckJoint/HighNeckJoint/HeadJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulderJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulderJoint/RightArmJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulderJoint/RightArmJoint/RightHandJoint
+        weight: 1
+      - path: Zulu
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Jump
+      takeName: Take 001
+      firstFrame: 18
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Locator
+        weight: 1
+      - path: RootJoint
+        weight: 1
+      - path: RootJoint/LeftHipJoint
+        weight: 1
+      - path: RootJoint/LeftHipJoint/LeftKneeJoint
+        weight: 1
+      - path: RootJoint/LeftHipJoint/LeftKneeJoint/LeftFootJoint
+        weight: 1
+      - path: RootJoint/RightHipJoint
+        weight: 1
+      - path: RootJoint/RightHipJoint/RightKneeJoint
+        weight: 1
+      - path: RootJoint/RightHipJoint/RightKneeJoint/RightFootJoint
+        weight: 1
+      - path: RootJoint/SpineJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulderJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulderJoint/LeftArmJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulderJoint/LeftArmJoint/LeftHandJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LowNeckJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LowNeckJoint/HighNeckJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LowNeckJoint/HighNeckJoint/HeadJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulderJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulderJoint/RightArmJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulderJoint/RightArmJoint/RightHandJoint
+        weight: 1
+      - path: Zulu
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Dead
+      takeName: Take 001
+      firstFrame: 21
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Locator
+        weight: 1
+      - path: RootJoint
+        weight: 1
+      - path: RootJoint/LeftHipJoint
+        weight: 1
+      - path: RootJoint/LeftHipJoint/LeftKneeJoint
+        weight: 1
+      - path: RootJoint/LeftHipJoint/LeftKneeJoint/LeftFootJoint
+        weight: 1
+      - path: RootJoint/RightHipJoint
+        weight: 1
+      - path: RootJoint/RightHipJoint/RightKneeJoint
+        weight: 1
+      - path: RootJoint/RightHipJoint/RightKneeJoint/RightFootJoint
+        weight: 1
+      - path: RootJoint/SpineJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulderJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulderJoint/LeftArmJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulderJoint/LeftArmJoint/LeftHandJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LowNeckJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LowNeckJoint/HighNeckJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/LowNeckJoint/HighNeckJoint/HeadJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulderJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulderJoint/RightArmJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulderJoint/RightArmJoint/RightHandJoint
+        weight: 1
+      - path: Zulu
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []
