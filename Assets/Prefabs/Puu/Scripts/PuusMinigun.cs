@@ -48,7 +48,7 @@ public class PuusMinigun : MonoBehaviour {
 		triggered = toyWeapon.Triggered;
 
 		// Trigger exec
-		if (toyWeapon.Triggered) {
+		if (triggered) {
 			if (!startedRotation) {
 				startedRotation = true;
 				triggeredTime = Time.timeSinceLevelLoad;
@@ -77,7 +77,6 @@ public class PuusMinigun : MonoBehaviour {
 		foreach (RaycastHit hit in hits) {
 			ToyPart hittedPart = hit.collider.GetComponent<ToyPart>();
 			if (hittedPart != null) {
-				print("here");
 				hittedPart.Hit(toyWeapon.toy, toyWeapon.damage);
 			}
 		}
@@ -120,6 +119,6 @@ public class PuusMinigun : MonoBehaviour {
 	}
 
 	void SetAnimationProperties() {
-		animator.SetBool("triggered", toyWeapon.Triggered);
+		animator.SetBool("triggered", triggered);
 	}
 }
