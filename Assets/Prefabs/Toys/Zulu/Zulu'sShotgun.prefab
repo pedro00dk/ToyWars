@@ -674,8 +674,8 @@ MonoBehaviour:
   toy: {fileID: 0}
   damage: 4
   fireRate: 1.75
-  magazine: 12
-  regeneration: 0.5
+  magazine: 5
+  regeneration: 0.2
 --- !u!114 &114000013415405282
 MonoBehaviour:
   m_ObjectHideFlags: 1

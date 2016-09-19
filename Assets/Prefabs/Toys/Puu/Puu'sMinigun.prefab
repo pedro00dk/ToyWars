@@ -566,10 +566,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toy: {fileID: 0}
-  damage: 2.5
+  damage: 4
   fireRate: 25
-  magazine: 100
-  regeneration: 3
+  magazine: 80
+  regeneration: 2
 --- !u!136 &136000012593693208
 CapsuleCollider:
   m_ObjectHideFlags: 1

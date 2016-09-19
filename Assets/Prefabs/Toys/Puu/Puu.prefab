@@ -679,10 +679,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011417996394}
-  m_LocalRotation: {x: -0, y: -0.7553369, z: -0, w: 0.65533674}
-  m_LocalPosition: {x: 3.25, y: 0, z: -3.86}
+  m_LocalRotation: {x: -0, y: -0.96679616, z: -0, w: -0.2555489}
+  m_LocalPosition: {x: -2.303832, y: -0.0000009566849, z: -0.36284542}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
-  m_LocalEulerAnglesHint: {x: 0, y: -97.892006, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -209.612, z: 0}
   m_Children:
   - {fileID: 4000013830218114}
   - {fileID: 4000010706564550}
@@ -1226,7 +1226,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1975,10 +1975,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toy: {fileID: 114000011513854982}
-  damage: 2.5
+  damage: 4
   fireRate: 25
-  magazine: 100
-  regeneration: 3
+  magazine: 80
+  regeneration: 2
 --- !u!114 &114000012836227094
 MonoBehaviour:
   m_ObjectHideFlags: 1

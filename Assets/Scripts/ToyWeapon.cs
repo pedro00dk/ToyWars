@@ -23,7 +23,7 @@ public class ToyWeapon : MonoBehaviour {
 	}
 
 	void Update() {
-
+		
 		// Dead block
 		if (toy.Dead) {
 			triggered = false;

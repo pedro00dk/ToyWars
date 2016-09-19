@@ -35,7 +35,7 @@ public class ZulusShotgun : MonoBehaviour {
 	}
 
 	void Update() {
-
+		
 		// Trigger exec
 		if (toyWeapon.Triggered) {
 			if (Time.timeSinceLevelLoad >= lastShootTime + 1 / toyWeapon.fireRate) {
@@ -58,7 +58,6 @@ public class ZulusShotgun : MonoBehaviour {
 				                                 barrelOut.up
 			                                 );
 			Vector3 particleDiretion = verticalRotation * horizontallRotation * barrelOut.forward;
-			Debug.DrawRay(barrelOut.position, particleDiretion, Color.yellow);
 			RaycastHit[] hits = Physics.RaycastAll(barrelOut.position, particleDiretion);
 			foreach (RaycastHit hit in hits) {
 				ToyPart hittedPart = hit.collider.GetComponent<ToyPart>();

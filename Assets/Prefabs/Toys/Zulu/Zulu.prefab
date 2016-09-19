@@ -1230,7 +1230,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 914ea1a470a096846b97c383e00eec22, type: 2}
   - {fileID: 2100000, guid: 5dc1f8fd426f72246ac19765615f18dc, type: 2}
   - {fileID: 2100000, guid: 7da8a9d0f6611d54ab352822f00e759a, type: 2}
-  - {fileID: 2100000, guid: 770df127f6b9a7a499af3658966fd183, type: 2}
+  - {fileID: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -1910,8 +1910,8 @@ MonoBehaviour:
   toy: {fileID: 114000012051206302}
   damage: 4
   fireRate: 1.75
-  magazine: 12
-  regeneration: 0.5
+  magazine: 5
+  regeneration: 0.2
 --- !u!114 &114000013137436672
 MonoBehaviour:
   m_ObjectHideFlags: 1
