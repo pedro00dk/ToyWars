@@ -4,7 +4,6 @@ using System.Collections;
 [RequireComponent(typeof(Toy))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(Collider))]
 public class ToyController : MonoBehaviour {
 
 	[Header("Skeleton components")]
@@ -30,7 +29,6 @@ public class ToyController : MonoBehaviour {
 	Toy toy;
 	Animator animator;
 	Rigidbody body;
-	Collider contact;
 
 	// Animator properties
 	bool walking = false;
@@ -52,7 +50,6 @@ public class ToyController : MonoBehaviour {
 		toy = GetComponent<Toy>();
 		animator = GetComponent<Animator>();
 		body = GetComponent<Rigidbody>();
-		contact = GetComponent<Collider>();
 
 		SetAnimationProperties();
 	}
@@ -66,6 +63,8 @@ public class ToyController : MonoBehaviour {
 		walking = movementAxis.sqrMagnitude > 0;
 
 		// Jump check
+		grounded = Physics.Raycast(toyLocator.position + Vector3.up * 0.05f, Vector3.down, 0.1f);
+		Debug.DrawLine(toyLocator.position + Vector3.up * 0.05f, toyLocator.position + Vector3.up * 0.05f + Vector3.down * 0.1f);
 		jumping = grounded ? Input.GetAxisRaw("Jump") * jumpSpeed : 0;
 
 		// Rotation check
@@ -78,6 +77,8 @@ public class ToyController : MonoBehaviour {
 
 		SetAnimationProperties();
 	}
+
+	bool deadBefore = false;
 
 	void LateUpdate() {
 
@@ -124,17 +125,5 @@ public class ToyController : MonoBehaviour {
 		animator.SetBool("walking", walking);
 		animator.SetBool("grounded", grounded);
 		animator.SetBool("dead", dead);
-	}
-
-	void OnCollisionEnter(Collision col) {
-		grounded = true;
-	}
-
-	void OnCollisionStay(Collision col) {
-		grounded = true;
-	}
-
-	void OnCollisionExit(Collision col) {
-		grounded = false;
 	}
 }
