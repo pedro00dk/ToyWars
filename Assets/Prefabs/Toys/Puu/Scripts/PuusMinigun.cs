@@ -48,6 +48,7 @@ public class PuusMinigun : MonoBehaviour {
 				if (Time.timeSinceLevelLoad >= lastShootTime + 1 / toyGun.fireRate) {
 					lastShootTime = Time.timeSinceLevelLoad + 1 / toyGun.fireRate;
 					toyGun.Shoot();
+					RotateBarrel();
 					Shoot();
 				}
 			}
@@ -71,7 +72,7 @@ public class PuusMinigun : MonoBehaviour {
 	}
 
 	void RotateBarrel() {
-		if (!effectsAudioSource.clip.Equals(rotationClip) && triggered) {
+		if (!effectsAudioSource.clip.Equals(rotationClip)) {
 			effectsAudioSource.clip = rotationClip;
 			effectsAudioSource.loop = true;
 			effectsAudioSource.Play();
