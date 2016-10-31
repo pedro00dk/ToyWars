@@ -44,12 +44,17 @@ public class ToyController : MonoBehaviour {
 	Vector3 smoothMovementVelocity;
 	float spineUpdateEulerAngles;
 
+	// Others
+	Vector3 initialSpineJointLocalEulerAngles;
+
 	//
 
 	void Start() {
 		toy = GetComponent<Toy>();
 		animator = GetComponent<Animator>();
 		body = GetComponent<Rigidbody>();
+
+		initialSpineJointLocalEulerAngles = spineJoint.localEulerAngles;
 
 		SetAnimationProperties();
 	}
@@ -78,8 +83,6 @@ public class ToyController : MonoBehaviour {
 		SetAnimationProperties();
 	}
 
-	bool deadBefore = false;
-
 	void LateUpdate() {
 
 		// Dead block
@@ -98,7 +101,7 @@ public class ToyController : MonoBehaviour {
 			-verticalLimitMinMax.y, verticalLimitMinMax.x
 		);
 		Vector3 spineJointIncrementEulerAngles = lateralSpineAxis * spineUpdateEulerAngles;
-		spineJoint.localEulerAngles += spineJointIncrementEulerAngles; // Spine rotation
+		spineJoint.localEulerAngles = initialSpineJointLocalEulerAngles + spineJointIncrementEulerAngles; // Spine rotation
 		camSpineParent.localEulerAngles = Vector3.right * spineUpdateEulerAngles; // Camera rotation
 	}
 

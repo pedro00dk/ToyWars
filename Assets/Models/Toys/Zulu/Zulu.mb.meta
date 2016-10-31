@@ -217,8 +217,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Jump
       takeName: Take 001
-      firstFrame: 18
-      lastFrame: 21
+      firstFrame: 19
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -285,7 +285,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Dead
       takeName: Take 001
-      firstFrame: 21
+      firstFrame: 23
       lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0

@@ -88,7 +88,7 @@ GameObject:
   - 4: {fileID: 4000010877545646}
   - 212: {fileID: 212000012617329606}
   m_Layer: 0
-  m_Name: Renderer1
+  m_Name: Renderer0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -233,7 +233,7 @@ GameObject:
   - 4: {fileID: 4000013099056570}
   - 212: {fileID: 212000010667434080}
   m_Layer: 0
-  m_Name: Renderer2
+  m_Name: Renderer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1975,10 +1975,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toy: {fileID: 114000011513854982}
+  barrelOut: {fileID: 4000010342177674}
   damage: 4
   fireRate: 25
   magazine: 80
   regeneration: 2
+  shootFlashTime: 0.03
+  shootEffectsRenderers:
+  - {fileID: 212000012617329606}
+  - {fileID: 212000010667434080}
+  shootRandomSpriteEffects:
+  - {fileID: 21300000, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  - {fileID: 21300002, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  - {fileID: 21300004, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  - {fileID: 21300006, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  flashLightEffect: {fileID: 108000010400646442}
+  shootClip: {fileID: 8300000, guid: 49ea538c2b6a55941a544a0397840331, type: 3}
 --- !u!114 &114000012836227094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2038,22 +2050,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd16414aeeb6c54da157b43bb3fffe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrelOut: {fileID: 4000010342177674}
-  shootFlashTime: 0.03
-  shootEffectsRenderers:
-  - {fileID: 212000012617329606}
-  - {fileID: 212000010667434080}
-  shootRandomSpriteEffects:
-  - {fileID: 21300000, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
-  - {fileID: 21300002, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
-  - {fileID: 21300004, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
-  - {fileID: 21300006, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
-  flashLightEffect: {fileID: 108000010400646442}
   accelelerationClip: {fileID: 8300000, guid: 5d17555d10e52d045b3aaa384ed91501, type: 3}
   desaccelelerationClip: {fileID: 8300000, guid: 92350b24da17d8a45ae4561599652ebe,
     type: 3}
   rotationClip: {fileID: 8300000, guid: 3747803957a28c241848762256f9fc71, type: 3}
-  shootClip: {fileID: 8300000, guid: 49ea538c2b6a55941a544a0397840331, type: 3}
+  effectsAudioSource: {fileID: 82000010745091480}
 --- !u!114 &114000013386126962
 MonoBehaviour:
   m_ObjectHideFlags: 1
