@@ -62,6 +62,7 @@ public class PuusMinigun : MonoBehaviour {
 	}
 
 	void Shoot() {
+		Debug.DrawLine(toyGun.barrelOut.position, toyGun.barrelOut.position + toyGun.barrelOut.forward * 10, Color.red);
 		RaycastHit[] hits = Physics.RaycastAll(toyGun.barrelOut.position, toyGun.barrelOut.forward);
 		foreach (RaycastHit hit in hits) {
 			ToyPart hittedPart = hit.collider.GetComponent<ToyPart>();

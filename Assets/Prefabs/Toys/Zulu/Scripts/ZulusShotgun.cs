@@ -2,7 +2,6 @@
 using System.Collections;
 
 [RequireComponent(typeof(ToyGun))]
-[RequireComponent(typeof(AudioSource))]
 public class ZulusShotgun : MonoBehaviour {
 
 	[Header("Exclusive properties")]
