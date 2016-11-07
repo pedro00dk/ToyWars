@@ -337,6 +337,7 @@ GameObject:
   - 54: {fileID: 54000010678459660}
   - 114: {fileID: 114000012051206302}
   - 114: {fileID: 114000013137436672}
+  - 114: {fileID: 114000014193397112}
   m_Layer: 0
   m_Name: Zulu
   m_TagString: Untagged
@@ -1978,6 +1979,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 2
+--- !u!114 &114000014193397112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012169788622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 86
+    i1: 55
+    i2: 149
+    i3: 153
+    i4: 81
+    i5: 83
+    i6: 74
+    i7: 20
+    i8: 120
+    i9: 81
+    i10: 9
+    i11: 35
+    i12: 244
+    i13: 3
+    i14: 193
+    i15: 100
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!136 &136000013123589088
 CapsuleCollider:
   m_ObjectHideFlags: 1

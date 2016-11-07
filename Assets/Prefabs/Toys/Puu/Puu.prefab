@@ -283,6 +283,7 @@ GameObject:
   - 54: {fileID: 54000010515802006}
   - 114: {fileID: 114000011513854982}
   - 114: {fileID: 114000010574106006}
+  - 114: {fileID: 114000013516997738}
   m_Layer: 0
   m_Name: Puu
   m_TagString: Untagged
@@ -2039,6 +2040,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 1
+--- !u!114 &114000013516997738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011417996394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 130
+    i1: 158
+    i2: 77
+    i3: 197
+    i4: 224
+    i5: 1
+    i6: 244
+    i7: 164
+    i8: 233
+    i9: 93
+    i10: 212
+    i11: 0
+    i12: 218
+    i13: 84
+    i14: 154
+    i15: 39
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114000013733238592
 MonoBehaviour:
   m_ObjectHideFlags: 1
