@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(ToyGun))]
-public class RexisMachinegun : MonoBehaviour {
+public class QuicSilversPistol : MonoBehaviour {
 
 	// Components
 	ToyGun toyGun;
@@ -29,6 +29,7 @@ public class RexisMachinegun : MonoBehaviour {
 	}
 
 	void Shoot() {
+		Debug.DrawRay(toyGun.barrelOut.position, toyGun.barrelOut.forward, Color.red);
 		RaycastHit[] hits = Physics.RaycastAll(toyGun.barrelOut.position, toyGun.barrelOut.forward);
 		foreach (RaycastHit hit in hits) {
 			ToyPart hittedPart = hit.collider.GetComponent<ToyPart>();
