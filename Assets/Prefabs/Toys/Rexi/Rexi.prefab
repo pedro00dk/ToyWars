@@ -1598,7 +1598,7 @@ MonoBehaviour:
   - {fileID: 21300004, guid: e8c0c21a841e47642b4eced48cd6d182, type: 3}
   - {fileID: 21300006, guid: e8c0c21a841e47642b4eced48cd6d182, type: 3}
   flashLightEffect: {fileID: 108000014005744566}
-  shootClip: {fileID: 0}
+  shootClip: {fileID: 8300000, guid: 22d59a3d0c6571541bd8ebee8a87100e, type: 3}
 --- !u!114 &114000010701034384
 MonoBehaviour:
   m_ObjectHideFlags: 1
