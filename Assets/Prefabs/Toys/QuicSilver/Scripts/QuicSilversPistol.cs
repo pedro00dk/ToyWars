@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(ToyGun))]
-public class RexisMachinegun : MonoBehaviour {
+public class QuicSilversPistol : MonoBehaviour {
 
 	// Components
 	ToyGun toyGun;

@@ -1,0 +1,419 @@
+fileFormatVersion: 2
+guid: 724e0117b16a39f47ba1c850eaef4d82
+timeCreated: 1478628901
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BaseNeck
+    100002: Colt Python
+    100004: //RootNode
+    100006: Cowboy
+    100008: joint11
+    100010: joint11 1
+    100012: joint12
+    100014: joint12 1
+    100016: joint4
+    100018: joint4 1
+    100020: joint9
+    100022: LeftHip
+    100024: LeftKnne
+    100026: LeftShoulder
+    100028: Locator
+    100030: RightHip
+    100032: RightKnee
+    100034: RightShoulder
+    100036: RootJoint
+    100038: SpineJoint
+    100040: Star
+    100042: TopNeck
+    100044: Whip
+    400000: BaseNeck
+    400002: Colt Python
+    400004: //RootNode
+    400006: Cowboy
+    400008: joint11
+    400010: joint11 1
+    400012: joint12
+    400014: joint12 1
+    400016: joint4
+    400018: joint4 1
+    400020: joint9
+    400022: LeftHip
+    400024: LeftKnne
+    400026: LeftShoulder
+    400028: Locator
+    400030: RightHip
+    400032: RightKnee
+    400034: RightShoulder
+    400036: RootJoint
+    400038: SpineJoint
+    400040: Star
+    400042: TopNeck
+    400044: Whip
+    2300000: Colt Python
+    3300000: Colt Python
+    4300000: Cowboy
+    4300002: Star
+    4300004: Whip
+    4300006: Colt Python
+    7400000: Idle
+    7400002: Walk
+    7400004: Jump
+    7400006: Dead
+    9500000: //RootNode
+    13700000: Cowboy
+    13700002: Star
+    13700004: Whip
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 3
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cowboy
+        weight: 1
+      - path: Cowboy/Star
+        weight: 1
+      - path: Cowboy/Whip
+        weight: 1
+      - path: Locator
+        weight: 1
+      - path: RootJoint
+        weight: 1
+      - path: RootJoint/LeftHip
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnne
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnne/joint4
+        weight: 1
+      - path: RootJoint/RightHip
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee/joint4 1
+        weight: 1
+      - path: RootJoint/SpineJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/BaseNeck
+        weight: 1
+      - path: RootJoint/SpineJoint/BaseNeck/TopNeck
+        weight: 1
+      - path: RootJoint/SpineJoint/BaseNeck/TopNeck/joint9
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulder
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulder/joint11
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulder/joint11/joint12
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulder
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulder/joint11 1
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulder/joint11 1/joint12 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 5
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cowboy
+        weight: 1
+      - path: Cowboy/Star
+        weight: 1
+      - path: Cowboy/Whip
+        weight: 1
+      - path: Locator
+        weight: 1
+      - path: RootJoint
+        weight: 1
+      - path: RootJoint/LeftHip
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnne
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnne/joint4
+        weight: 1
+      - path: RootJoint/RightHip
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee/joint4 1
+        weight: 1
+      - path: RootJoint/SpineJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/BaseNeck
+        weight: 1
+      - path: RootJoint/SpineJoint/BaseNeck/TopNeck
+        weight: 1
+      - path: RootJoint/SpineJoint/BaseNeck/TopNeck/joint9
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulder
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulder/joint11
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulder/joint11/joint12
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulder
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulder/joint11 1
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulder/joint11 1/joint12 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Jump
+      takeName: Take 001
+      firstFrame: 21
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cowboy
+        weight: 1
+      - path: Cowboy/Star
+        weight: 1
+      - path: Cowboy/Whip
+        weight: 1
+      - path: Locator
+        weight: 1
+      - path: RootJoint
+        weight: 1
+      - path: RootJoint/LeftHip
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnne
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnne/joint4
+        weight: 1
+      - path: RootJoint/RightHip
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee/joint4 1
+        weight: 1
+      - path: RootJoint/SpineJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/BaseNeck
+        weight: 1
+      - path: RootJoint/SpineJoint/BaseNeck/TopNeck
+        weight: 1
+      - path: RootJoint/SpineJoint/BaseNeck/TopNeck/joint9
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulder
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulder/joint11
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulder/joint11/joint12
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulder
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulder/joint11 1
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulder/joint11 1/joint12 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Dead
+      takeName: Take 001
+      firstFrame: 22
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cowboy
+        weight: 1
+      - path: Cowboy/Star
+        weight: 1
+      - path: Cowboy/Whip
+        weight: 1
+      - path: Locator
+        weight: 1
+      - path: RootJoint
+        weight: 1
+      - path: RootJoint/LeftHip
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnne
+        weight: 1
+      - path: RootJoint/LeftHip/LeftKnne/joint4
+        weight: 1
+      - path: RootJoint/RightHip
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee
+        weight: 1
+      - path: RootJoint/RightHip/RightKnee/joint4 1
+        weight: 1
+      - path: RootJoint/SpineJoint
+        weight: 1
+      - path: RootJoint/SpineJoint/BaseNeck
+        weight: 1
+      - path: RootJoint/SpineJoint/BaseNeck/TopNeck
+        weight: 1
+      - path: RootJoint/SpineJoint/BaseNeck/TopNeck/joint9
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulder
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulder/joint11
+        weight: 1
+      - path: RootJoint/SpineJoint/LeftShoulder/joint11/joint12
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulder
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulder/joint11 1
+        weight: 1
+      - path: RootJoint/SpineJoint/RightShoulder/joint11 1/joint12 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
