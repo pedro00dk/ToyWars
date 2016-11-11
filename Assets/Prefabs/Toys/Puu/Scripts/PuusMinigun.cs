@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Networking;
 
 [RequireComponent(typeof(ToyGun))]
 [RequireComponent(typeof(Animator))]
-public class PuusMinigun : NetworkBehaviour
-{
+public class PuusMinigun : MonoBehaviour {
 
 	[Header("Exclusive properties")]
 	public AudioClip accelelerationClip;
@@ -49,9 +47,9 @@ public class PuusMinigun : NetworkBehaviour
 			if (Time.timeSinceLevelLoad >= triggeredTime + 1) {
 				if (Time.timeSinceLevelLoad >= lastShootTime + 1 / toyGun.fireRate) {
 					lastShootTime = Time.timeSinceLevelLoad + 1 / toyGun.fireRate;
-					toyGun.CmdShoot();
+					toyGun.Shoot();
 					RotateBarrel();
-					CmdShoot();
+					Shoot();
 				}
 			}
 		} else {
@@ -63,8 +61,7 @@ public class PuusMinigun : NetworkBehaviour
 		SetAnimationProperties();
 	}
 
-    [Command]
-	void CmdShoot() {
+	void Shoot() {
 		Debug.DrawLine(toyGun.barrelOut.position, toyGun.barrelOut.position + toyGun.barrelOut.forward * 10, Color.red);
 		RaycastHit[] hits = Physics.RaycastAll(toyGun.barrelOut.position, toyGun.barrelOut.forward);
 		foreach (RaycastHit hit in hits) {

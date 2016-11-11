@@ -1,10 +1,8 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Networking;
 
 [RequireComponent(typeof(ToyGun))]
-public class QuicSilversPistol : NetworkBehaviour {
+public class QuicSilversPistol : MonoBehaviour {
 
 	// Components
 	ToyGun toyGun;
@@ -23,14 +21,13 @@ public class QuicSilversPistol : NetworkBehaviour {
 		if (toyGun.Triggered) {
 			if (Time.timeSinceLevelLoad >= lastShootTime + 1 / toyGun.fireRate) {
 				lastShootTime = Time.timeSinceLevelLoad + 1 / toyGun.fireRate;
-				toyGun.CmdShoot();
-				CmdShoot();
+				toyGun.Shoot();
+				Shoot();
 			}
 		}
 	}
 
-    [Command]
-	void CmdShoot() {
+	void Shoot() {
 		RaycastHit[] hits = Physics.RaycastAll(toyGun.barrelOut.position, toyGun.barrelOut.forward);
 		foreach (RaycastHit hit in hits) {
 			ToyPart hittedPart = hit.collider.GetComponent<ToyPart>();

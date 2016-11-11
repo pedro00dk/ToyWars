@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-public class Toy : MonoBehaviour {
+public class Toy : NetworkBehaviour {
 
 	[Header("Health properties")]
 	public float health;

@@ -22,7 +22,7 @@ GameObject:
   - 114: {fileID: 114000010148775236}
   - 114: {fileID: 114000011249174636}
   m_Layer: 0
-  m_Name: Network Manager
+  m_Name: NetworkManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

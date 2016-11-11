@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
 [RequireComponent(typeof(Toy))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody))]
-public class ToyController : MonoBehaviour {
+public class ToyController : NetworkBehaviour {
 
 	[Header("Skeleton components")]
 	public Transform spineJoint;
@@ -68,7 +69,7 @@ public class ToyController : MonoBehaviour {
 		walking = movementAxis.sqrMagnitude > 0;
 
 		// Jump check
-		grounded = Physics.Raycast(toyLocator.position + Vector3.up * 0.05f, Vector3.down, 0.1f);
+		grounded = Physics.Raycast(toyLocator.position + Vector3.up * 0.05f, Vector3.down, 0.2f);
 		Debug.DrawLine(toyLocator.position + Vector3.up * 0.05f, toyLocator.position + Vector3.up * 0.05f + Vector3.down * 0.1f);
 		jumping = grounded ? Input.GetAxisRaw("Jump") * jumpSpeed : 0;
 
