@@ -315,8 +315,6 @@ GameObject:
   - 95: {fileID: 95000010846620900}
   - 136: {fileID: 136000013123589088}
   - 82: {fileID: 82000011603588090}
-  - 114: {fileID: 114000011836620742}
-  - 114: {fileID: 114000013887843308}
   m_Layer: 0
   m_Name: Zulu'sShotgun
   m_TagString: Untagged
@@ -340,6 +338,9 @@ GameObject:
   - 114: {fileID: 114000014193397112}
   - 114: {fileID: 114000012886885610}
   - 114: {fileID: 114000010666424456}
+  - 82: {fileID: 82000010586299606}
+  - 114: {fileID: 114000010459372158}
+  - 114: {fileID: 114000012291472538}
   m_Layer: 0
   m_Name: Zulu
   m_TagString: Untagged
@@ -1610,6 +1611,80 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013927545840}
   m_Enabled: 1
+--- !u!82 &82000010586299606
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012169788622}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!82 &82000011603588090
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1795,6 +1870,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 1
+--- !u!114 &114000010459372158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012169788622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b936bf779bc7584bbc648515bf3dfdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootParticleCount: 15
+  outputAngleVariation: 14
 --- !u!114 &114000010666424456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1842,34 +1930,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 3
---- !u!114 &114000011836620742
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011978098392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a11a24975313fe40a3bedab96d74de8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toy: {fileID: 114000012051206302}
-  barrelOut: {fileID: 4000012588887682}
-  damage: 4
-  fireRate: 1.75
-  magazine: 5
-  regeneration: 0.2
-  shootFlashTime: 0.06
-  shootEffectsRenderers:
-  - {fileID: 212000010269230292}
-  - {fileID: 212000010266931174}
-  shootRandomSpriteEffects:
-  - {fileID: 21300000, guid: cb730e8a57f82cb4e883b7abea7fbf61, type: 3}
-  - {fileID: 21300002, guid: cb730e8a57f82cb4e883b7abea7fbf61, type: 3}
-  - {fileID: 21300004, guid: cb730e8a57f82cb4e883b7abea7fbf61, type: 3}
-  - {fileID: 21300006, guid: cb730e8a57f82cb4e883b7abea7fbf61, type: 3}
-  flashLightEffect: {fileID: 108000012428121598}
-  shootClip: {fileID: 8300000, guid: 759275ff3ddc23945b5ec1f63140d8d3, type: 3}
 --- !u!114 &114000011853268966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1930,6 +1990,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 3
+--- !u!114 &114000012291472538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012169788622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a11a24975313fe40a3bedab96d74de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toy: {fileID: 114000012051206302}
+  barrelOut: {fileID: 4000012588887682}
+  damage: 4
+  fireRate: 1.75
+  magazine: 5
+  regeneration: 0.2
+  shootFlashTime: 0.06
+  shootEffectsRenderers:
+  - {fileID: 212000010269230292}
+  - {fileID: 212000010266931174}
+  shootRandomSpriteEffects:
+  - {fileID: 21300000, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  - {fileID: 21300002, guid: 1d345ec22fb9cff4ca9fd47de778b699, type: 3}
+  - {fileID: 21300004, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  - {fileID: 21300006, guid: e8c0c21a841e47642b4eced48cd6d182, type: 3}
+  flashLightEffect: {fileID: 108000012428121598}
+  shootClip: {fileID: 8300000, guid: 759275ff3ddc23945b5ec1f63140d8d3, type: 3}
 --- !u!114 &114000012609397174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2032,19 +2120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 1
---- !u!114 &114000013887843308
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011978098392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b936bf779bc7584bbc648515bf3dfdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootParticleCount: 15
-  outputAngleVariation: 14
 --- !u!114 &114000013888517532
 MonoBehaviour:
   m_ObjectHideFlags: 1

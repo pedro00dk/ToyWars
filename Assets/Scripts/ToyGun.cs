@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof(AudioSource))]
-public class ToyGun : MonoBehaviour {
+public class ToyGun : NetworkBehaviour {
 
 	[Header("Toy object")]
 	public Toy toy;
@@ -52,7 +53,8 @@ public class ToyGun : MonoBehaviour {
 		currentMagazine = Mathf.Clamp(currentMagazine + regeneration * Time.deltaTime, 0, magazine);
 	}
 
-	public void Shoot() {
+    [Command]
+    public void CmdShoot() {
 		currentMagazine -= 1;
 		EnableShootEffects();
 	}

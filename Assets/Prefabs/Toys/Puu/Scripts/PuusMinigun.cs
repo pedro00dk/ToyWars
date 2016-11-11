@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof(ToyGun))]
 [RequireComponent(typeof(Animator))]
-public class PuusMinigun : MonoBehaviour {
+public class PuusMinigun : NetworkBehaviour
+{
 
 	[Header("Exclusive properties")]
 	public AudioClip accelelerationClip;
@@ -28,7 +30,7 @@ public class PuusMinigun : MonoBehaviour {
 	//
 
 	void Start() {
-		toyGun = GetComponent<ToyGun>();
+		toyGun = GetComponentInChildren<ToyGun>();
 		animator = GetComponent<Animator>();
 	}
 
@@ -47,9 +49,9 @@ public class PuusMinigun : MonoBehaviour {
 			if (Time.timeSinceLevelLoad >= triggeredTime + 1) {
 				if (Time.timeSinceLevelLoad >= lastShootTime + 1 / toyGun.fireRate) {
 					lastShootTime = Time.timeSinceLevelLoad + 1 / toyGun.fireRate;
-					toyGun.Shoot();
+					toyGun.CmdShoot();
 					RotateBarrel();
-					Shoot();
+					CmdShoot();
 				}
 			}
 		} else {
@@ -61,7 +63,8 @@ public class PuusMinigun : MonoBehaviour {
 		SetAnimationProperties();
 	}
 
-	void Shoot() {
+    [Command]
+	void CmdShoot() {
 		Debug.DrawLine(toyGun.barrelOut.position, toyGun.barrelOut.position + toyGun.barrelOut.forward * 10, Color.red);
 		RaycastHit[] hits = Physics.RaycastAll(toyGun.barrelOut.position, toyGun.barrelOut.forward);
 		foreach (RaycastHit hit in hits) {

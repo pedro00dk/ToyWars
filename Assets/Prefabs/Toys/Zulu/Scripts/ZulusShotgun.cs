@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof(ToyGun))]
-public class ZulusShotgun : MonoBehaviour {
+public class ZulusShotgun : NetworkBehaviour
+{
 
 	[Header("Exclusive properties")]
 	public int shootParticleCount;
@@ -17,7 +19,7 @@ public class ZulusShotgun : MonoBehaviour {
 	//
 
 	void Start() {
-		toyGun = GetComponent<ToyGun>();
+		toyGun = GetComponentInChildren<ToyGun>();
 	}
 
 	void Update() {
@@ -26,13 +28,14 @@ public class ZulusShotgun : MonoBehaviour {
 		if (toyGun.Triggered) {
 			if (Time.timeSinceLevelLoad >= lastShootTime + 1 / toyGun.fireRate) {
 				lastShootTime = Time.timeSinceLevelLoad + 1 / toyGun.fireRate;
-				toyGun.Shoot();
-				Shoot();
+				toyGun.CmdShoot();
+				CmdShoot();
 			}
 		}
 	}
 
-	void Shoot() {
+    [Command]
+	void CmdShoot() {
 		for (int i = 0; i < shootParticleCount; i++) {
 			Quaternion verticalRotation = Quaternion.AngleAxis(
 				                              Random.Range(-outputAngleVariation / 2, outputAngleVariation / 2),

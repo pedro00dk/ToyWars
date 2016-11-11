@@ -1,9 +1,10 @@
 ﻿
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof(ToyGun))]
-public class QuicSilversPistol : MonoBehaviour {
+public class QuicSilversPistol : NetworkBehaviour {
 
 	// Components
 	ToyGun toyGun;
@@ -13,7 +14,7 @@ public class QuicSilversPistol : MonoBehaviour {
 
 
 	void Start() {
-		toyGun = GetComponent<ToyGun>();
+		toyGun = GetComponentInChildren<ToyGun>();
 	}
 
 	void Update() {
@@ -22,13 +23,14 @@ public class QuicSilversPistol : MonoBehaviour {
 		if (toyGun.Triggered) {
 			if (Time.timeSinceLevelLoad >= lastShootTime + 1 / toyGun.fireRate) {
 				lastShootTime = Time.timeSinceLevelLoad + 1 / toyGun.fireRate;
-				toyGun.Shoot();
-				Shoot();
+				toyGun.CmdShoot();
+				CmdShoot();
 			}
 		}
 	}
 
-	void Shoot() {
+    [Command]
+	void CmdShoot() {
 		RaycastHit[] hits = Physics.RaycastAll(toyGun.barrelOut.position, toyGun.barrelOut.forward);
 		foreach (RaycastHit hit in hits) {
 			ToyPart hittedPart = hit.collider.GetComponent<ToyPart>();
