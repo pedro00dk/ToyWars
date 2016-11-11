@@ -9,6 +9,7 @@ public class ToyCamera : MonoBehaviour {
         _camera = FindObjectOfType<Camera>();
         _camera.transform.parent = this.transform;
         _camera.transform.position = this.transform.position;//new Vector3(0,0,0);
+        _camera.transform.rotation = this.transform.rotation;
 	}
 	
 	// Update is called once per frame
