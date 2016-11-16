@@ -594,6 +594,7 @@ GameObject:
   - 114: {fileID: 114000011286989936}
   - 114: {fileID: 114000012775296058}
   - 114: {fileID: 114000010780534568}
+  - 114: {fileID: 114000013615466750}
   m_Layer: 0
   m_Name: Rexi
   m_TagString: Untagged
@@ -1807,6 +1808,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 0
+--- !u!114 &114000013615466750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014269779782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d93bb66d9e68f14aabab24011b2347c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013875544876
 MonoBehaviour:
   m_ObjectHideFlags: 1

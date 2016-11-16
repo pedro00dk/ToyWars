@@ -62,26 +62,29 @@ public class ToyController : NetworkBehaviour {
 
 	void Update() {
 
-		// Movement check
-		movementAxis = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-		movementAxis.x *= sideSpeed;
-		movementAxis.y *= movementAxis.y > 0 ? forwardSpeed : backSpeed;
-		walking = movementAxis.sqrMagnitude > 0;
+        if(isLocalPlayer)
+        {
+		    // Movement check
+		    movementAxis = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+		    movementAxis.x *= sideSpeed;
+		    movementAxis.y *= movementAxis.y > 0 ? forwardSpeed : backSpeed;
+		    walking = movementAxis.sqrMagnitude > 0;
 
-		// Jump check
-		grounded = Physics.Raycast(toyLocator.position + Vector3.up * 0.05f, Vector3.down, 0.2f);
-		Debug.DrawLine(toyLocator.position + Vector3.up * 0.05f, toyLocator.position + Vector3.up * 0.05f + Vector3.down * 0.1f);
-		jumping = grounded ? Input.GetAxisRaw("Jump") * jumpSpeed : 0;
+		    // Jump check
+		    grounded = Physics.Raycast(toyLocator.position + Vector3.up * 0.05f, Vector3.down, 0.2f);
+		    Debug.DrawLine(toyLocator.position + Vector3.up * 0.05f, toyLocator.position + Vector3.up * 0.05f + Vector3.down * 0.1f);
+		    jumping = grounded ? Input.GetAxisRaw("Jump") * jumpSpeed : 0;
 
-		// Rotation check
-		rotationAxis = new Vector2(
-			Input.GetAxisRaw("Mouse X") * sensibility.x, Input.GetAxisRaw("Mouse Y") * sensibility.y
-		);
+		    // Rotation check
+		    rotationAxis = new Vector2(
+		    	Input.GetAxisRaw("Mouse X") * sensibility.x, Input.GetAxisRaw("Mouse Y") * sensibility.y
+		    );
 
-		// Dead check
-		dead = toy.Dead;
+		    // Dead check
+		    dead = toy.Dead;
 
-		SetAnimationProperties();
+		    SetAnimationProperties();
+        }
 	}
 
 	void LateUpdate() {

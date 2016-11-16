@@ -532,6 +532,7 @@ GameObject:
   - 114: {fileID: 114000010591460012}
   - 114: {fileID: 114000012932339212}
   - 114: {fileID: 114000010807896980}
+  - 114: {fileID: 114000013712271570}
   m_Layer: 0
   m_Name: QuicSilver
   m_TagString: Untagged
@@ -1663,6 +1664,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 585dce9d4fd9f91458af131ede16f3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000013712271570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014173189288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d93bb66d9e68f14aabab24011b2347c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!124 &124000013531068060

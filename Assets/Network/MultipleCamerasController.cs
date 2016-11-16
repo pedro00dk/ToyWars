@@ -4,11 +4,10 @@ using System.Collections;
 
 public class MultipleCamerasController : NetworkBehaviour
 {
-
-    Camera camera;
+    
 	// Use this for initialization
 	void Start () {
-        camera = GetComponentInChildren<Camera>();
+        Camera camera = GetComponentInChildren<Camera>();
         camera.enabled = isLocalPlayer;
 	}
 	
