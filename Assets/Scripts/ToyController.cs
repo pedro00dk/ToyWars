@@ -55,6 +55,8 @@ public class ToyController : NetworkBehaviour {
 		animator = GetComponent<Animator>();
 		body = GetComponent<Rigidbody>();
 
+		camera.enabled = isLocalPlayer;
+
 		initialSpineJointLocalEulerAngles = spineJoint.localEulerAngles;
 
 		SetAnimationProperties();
@@ -62,32 +64,37 @@ public class ToyController : NetworkBehaviour {
 
 	void Update() {
 
-        if(isLocalPlayer)
-        {
-		    // Movement check
-		    movementAxis = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-		    movementAxis.x *= sideSpeed;
-		    movementAxis.y *= movementAxis.y > 0 ? forwardSpeed : backSpeed;
-		    walking = movementAxis.sqrMagnitude > 0;
+		if (!isLocalPlayer) {
+			return;
+		}
 
-		    // Jump check
-		    grounded = Physics.Raycast(toyLocator.position + Vector3.up * 0.05f, Vector3.down, 0.2f);
-		    Debug.DrawLine(toyLocator.position + Vector3.up * 0.05f, toyLocator.position + Vector3.up * 0.05f + Vector3.down * 0.1f);
-		    jumping = grounded ? Input.GetAxisRaw("Jump") * jumpSpeed : 0;
+		// Movement check
+		movementAxis = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+		movementAxis.x *= sideSpeed;
+		movementAxis.y *= movementAxis.y > 0 ? forwardSpeed : backSpeed;
+		walking = movementAxis.sqrMagnitude > 0;
 
-		    // Rotation check
-		    rotationAxis = new Vector2(
-		    	Input.GetAxisRaw("Mouse X") * sensibility.x, Input.GetAxisRaw("Mouse Y") * sensibility.y
-		    );
+		// Jump check
+		grounded = Physics.Raycast(toyLocator.position + Vector3.up * 0.05f, Vector3.down, 0.2f);
+		Debug.DrawLine(toyLocator.position + Vector3.up * 0.05f, toyLocator.position + Vector3.up * 0.05f + Vector3.down * 0.1f);
+		jumping = grounded ? Input.GetAxisRaw("Jump") * jumpSpeed : 0;
 
-		    // Dead check
-		    dead = toy.Dead;
+		// Rotation check
+		rotationAxis = new Vector2(
+			Input.GetAxisRaw("Mouse X") * sensibility.x, Input.GetAxisRaw("Mouse Y") * sensibility.y
+		);
 
-		    SetAnimationProperties();
-        }
+		// Dead check
+		dead = toy.Dead;
+
+		SetAnimationProperties();
 	}
 
 	void LateUpdate() {
+
+		if (!isLocalPlayer) {
+			return;
+		}
 
 		// Dead block
 		if (dead) {
@@ -110,6 +117,10 @@ public class ToyController : NetworkBehaviour {
 	}
 
 	void FixedUpdate() {
+
+		if (!isLocalPlayer) {
+			return;
+		}
 
 		// Dead block
 		if (dead) {
