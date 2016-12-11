@@ -150,14 +150,14 @@ public class PuusMinigun : NetworkBehaviour {
 
 	[Command]
 	void CmdSetAnimationProperties(bool triggered) {
-		this.triggered = triggered = triggered;
+		this.triggered = triggered;
 		animator.SetBool("triggered", triggered);
 		RpcSetAnimationProperties(triggered);
 	}
 
 	[ClientRpc]
 	void RpcSetAnimationProperties(bool triggered) {
-		this.triggered = triggered = triggered;
+		this.triggered = triggered;
 		animator.SetBool("triggered", triggered);
 	}
 }
