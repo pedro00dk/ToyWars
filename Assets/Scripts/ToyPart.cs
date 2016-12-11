@@ -9,17 +9,17 @@ public class ToyPart : MonoBehaviour {
 	public Part part;
 
 	// Internal properties
-	Action<Toy, Part, float> onHit;
+	Action<string, Part, float> onHit;
 
 	//
 
-	public void SetOnHit(Action<Toy, Part, float> onHit) {
+	public void SetOnHit(Action<string, Part, float> onHit) {
 		this.onHit = onHit;
 	}
 
 	public void Hit(Toy damager, float damage) {
 		if (onHit != null) {
-			onHit(damager, part, damage);
+			onHit("nothing at this moment", part, damage);
 		}
 	}
 
