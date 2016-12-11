@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
+[RequireComponent(typeof(Toy))]
 [RequireComponent(typeof(ToyGun))]
-[RequireComponent(typeof(Animator))]
-public class PuusMinigun : MonoBehaviour {
+public class PuusMinigun : NetworkBehaviour {
 
 	[Header("Exclusive properties")]
 	public AudioClip accelelerationClip;
@@ -12,10 +13,11 @@ public class PuusMinigun : MonoBehaviour {
 
 	[Header("Extra components")]
 	public AudioSource effectsAudioSource;
+	public Animator animator;
 
 	// Components
+	Toy toy;
 	ToyGun toyGun;
-	Animator animator;
 
 	// Animator properties
 	bool triggered = false;
@@ -28,11 +30,15 @@ public class PuusMinigun : MonoBehaviour {
 	//
 
 	void Start() {
+		toy = GetComponent<Toy>();
 		toyGun = GetComponent<ToyGun>();
-		animator = GetComponent<Animator>();
 	}
 
 	void Update() {
+
+		if (!isLocalPlayer) {
+			return;
+		}
 
 		// Trigger check
 		triggered = toyGun.Triggered;
@@ -42,34 +48,49 @@ public class PuusMinigun : MonoBehaviour {
 			if (!startedRotation) {
 				startedRotation = true;
 				triggeredTime = Time.timeSinceLevelLoad;
-				AccelerateBarrel();
+				BroadcastAccelerateBarrel();
 			}
 			if (Time.timeSinceLevelLoad >= triggeredTime + 1) {
 				if (Time.timeSinceLevelLoad >= lastShootTime + 1 / toyGun.fireRate) {
 					lastShootTime = Time.timeSinceLevelLoad + 1 / toyGun.fireRate;
 					toyGun.Shoot();
-					RotateBarrel();
-					Shoot();
+					BroadcastRotateBarrel();
+					CmdShoot();
 				}
 			}
 		} else {
 			if (startedRotation) {
-				DesaccelerateBarrel();
+				BroadcastDesaccelerateBarrel();
 			}
 			startedRotation = false;
 		}
 		SetAnimationProperties();
 	}
 
-	void Shoot() {
-		Debug.DrawLine(toyGun.barrelOut.position, toyGun.barrelOut.position + toyGun.barrelOut.forward * 10, Color.red);
+	[Command]
+	void CmdShoot() {
 		RaycastHit[] hits = Physics.RaycastAll(toyGun.barrelOut.position, toyGun.barrelOut.forward);
 		foreach (RaycastHit hit in hits) {
 			ToyPart hittedPart = hit.collider.GetComponent<ToyPart>();
 			if (hittedPart != null) {
-				hittedPart.Hit(toyGun.toy, toyGun.damage);
+				hittedPart.Hit(toy, toyGun.damage);
 			}
 		}
+	}
+
+	void BroadcastRotateBarrel() {
+		CmdRotateBarrel();
+	}
+
+	[Command]
+	void CmdRotateBarrel() {
+		RotateBarrel();
+		RpcRotateBarrel();
+	}
+
+	[ClientRpc]
+	void RpcRotateBarrel() {
+		RotateBarrel();
 	}
 
 	void RotateBarrel() {
@@ -80,10 +101,40 @@ public class PuusMinigun : MonoBehaviour {
 		}
 	}
 
+	void BroadcastAccelerateBarrel() {
+		CmdAccelerateBarrel();
+	}
+
+	[Command]
+	void CmdAccelerateBarrel() {
+		AccelerateBarrel();
+		RpcAccelerateBarrel();
+	}
+
+	[ClientRpc]
+	void RpcAccelerateBarrel() {
+		AccelerateBarrel();
+	}
+
 	void AccelerateBarrel() {
 		effectsAudioSource.clip = accelelerationClip;
 		effectsAudioSource.loop = false;
 		effectsAudioSource.Play();
+	}
+
+	void BroadcastDesaccelerateBarrel() {
+		CmdDesaccelerateBarrel();
+	}
+
+	[Command]
+	void CmdDesaccelerateBarrel() {
+		DesaccelerateBarrel();
+		RpcDesaccelerateBarrel();
+	}
+
+	[ClientRpc]
+	void RpcDesaccelerateBarrel() {
+		DesaccelerateBarrel();
 	}
 
 	void DesaccelerateBarrel() {
@@ -93,6 +144,20 @@ public class PuusMinigun : MonoBehaviour {
 	}
 
 	void SetAnimationProperties() {
+		animator.SetBool("triggered", triggered);
+		CmdSetAnimationProperties(triggered);
+	}
+
+	[Command]
+	void CmdSetAnimationProperties(bool triggered) {
+		this.triggered = triggered = triggered;
+		animator.SetBool("triggered", triggered);
+		RpcSetAnimationProperties(triggered);
+	}
+
+	[ClientRpc]
+	void RpcSetAnimationProperties(bool triggered) {
+		this.triggered = triggered = triggered;
 		animator.SetBool("triggered", triggered);
 	}
 }

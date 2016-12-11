@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
-[RequireComponent(typeof(AudioSource))]
-public class ToyGun : MonoBehaviour {
-
-	[Header("Toy object")]
-	public Toy toy;
+[RequireComponent(typeof(Toy))]
+public class ToyGun : NetworkBehaviour {
 
 	[Header("Transform properties")]
 	public Transform barrelOut;
@@ -23,8 +21,11 @@ public class ToyGun : MonoBehaviour {
 	public Light flashLightEffect;
 	public AudioClip shootClip;
 
+	[Header("Extra components")]
+	public AudioSource audioSource;
+
 	// Components
-	AudioSource audioSource;
+	Toy toy;
 
 	// Internal properties
 	float currentMagazine;
@@ -33,11 +34,15 @@ public class ToyGun : MonoBehaviour {
 	//
 
 	void Start() {
-		audioSource = GetComponent<AudioSource>();
+		toy = GetComponent <Toy>();
 		currentMagazine = magazine;
 	}
 
 	void Update() {
+
+		if (!isLocalPlayer) {
+			return;
+		}
 		
 		// Dead block
 		if (toy.Dead) {
@@ -54,6 +59,22 @@ public class ToyGun : MonoBehaviour {
 
 	public void Shoot() {
 		currentMagazine -= 1;
+		BroadcastEnableShootEffects();
+	}
+
+	void BroadcastEnableShootEffects() {
+		CmdEnableShootEffects();
+	}
+
+	[Command]
+	void CmdEnableShootEffects() {
+		EnableShootEffects();
+		RpcEnableShootEffects();
+
+	}
+
+	[ClientRpc]
+	void RpcEnableShootEffects() {
 		EnableShootEffects();
 	}
 
@@ -61,20 +82,27 @@ public class ToyGun : MonoBehaviour {
 		Sprite selectedSprite = shootRandomSpriteEffects[Random.Range(0, shootRandomSpriteEffects.Length - 1)];
 		foreach (SpriteRenderer effectRenderer in shootEffectsRenderers) {
 			effectRenderer.sprite = selectedSprite;
-			effectRenderer.gameObject.SetActive(true);
 		}
-		flashLightEffect.gameObject.SetActive(true);
-		audioSource.clip = shootClip;
-		audioSource.Play();
+		flashLightEffect.intensity = 1;
+		if (audioSource != null) {
+			audioSource.clip = shootClip;
+			audioSource.Play();
+		}
 		StartCoroutine(DisableShootEffects());
 	}
 
 	IEnumerator DisableShootEffects() {
 		yield return new WaitForSeconds(shootFlashTime);
 		foreach (SpriteRenderer effectRenderer in shootEffectsRenderers) {
-			effectRenderer.gameObject.SetActive(false);
+			effectRenderer.sprite = null;
 		}
-		flashLightEffect.gameObject.SetActive(false);
+		flashLightEffect.intensity = 0;
+	}
+
+	public float CurrentMagazine {
+		get {
+			return currentMagazine;
+		}
 	}
 
 	public bool Triggered {

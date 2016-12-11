@@ -2,7 +2,7 @@
 using System.Collections;
 using Prototype.NetworkLobby;
 
-public class SelectPlayer : MonoBehaviour {
+public class PlayerSelector : MonoBehaviour {
 
     public int selectedPlayer;
     LobbyManager lm;
