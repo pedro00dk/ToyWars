@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000010564714718
 GameObject:
   m_ObjectHideFlags: 1
@@ -181,7 +181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000011774330160
 GameObject:
   m_ObjectHideFlags: 1
@@ -299,7 +299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000012420530404
 GameObject:
   m_ObjectHideFlags: 1
@@ -312,8 +312,6 @@ GameObject:
   - 23: {fileID: 23000014082490580}
   - 95: {fileID: 95000010353028660}
   - 82: {fileID: 82000012856459798}
-  - 114: {fileID: 114000010607945374}
-  - 114: {fileID: 114000013204326980}
   m_Layer: 0
   m_Name: Rexi'sMachinegun
   m_TagString: Untagged
@@ -607,6 +605,8 @@ GameObject:
   - 54: {fileID: 54000014152809508}
   - 114: {fileID: 114000012126632450}
   - 114: {fileID: 114000011286989936}
+  - 114: {fileID: 114000014134898430}
+  - 114: {fileID: 114000013393317128}
   - 114: {fileID: 114000012775296058}
   - 114: {fileID: 114000010780534568}
   - 114: {fileID: 114000013486977102}
@@ -1481,7 +1481,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1492,7 +1492,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1503,7 +1503,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!92 &92000010782276718
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1555,7 +1555,7 @@ Light:
   serializedVersion: 7
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 0.641, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 0
   m_Range: 4
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1603,34 +1603,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 0
---- !u!114 &114000010607945374
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012420530404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a11a24975313fe40a3bedab96d74de8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toy: {fileID: 114000012126632450}
-  barrelOut: {fileID: 4000010102748202}
-  damage: 8
-  fireRate: 15
-  magazine: 40
-  regeneration: 3
-  shootFlashTime: 0.04
-  shootEffectsRenderers:
-  - {fileID: 212000013388338616}
-  - {fileID: 212000014177296310}
-  shootRandomSpriteEffects:
-  - {fileID: 21300000, guid: e8c0c21a841e47642b4eced48cd6d182, type: 3}
-  - {fileID: 21300002, guid: e8c0c21a841e47642b4eced48cd6d182, type: 3}
-  - {fileID: 21300004, guid: e8c0c21a841e47642b4eced48cd6d182, type: 3}
-  - {fileID: 21300006, guid: e8c0c21a841e47642b4eced48cd6d182, type: 3}
-  flashLightEffect: {fileID: 108000014005744566}
-  shootClip: {fileID: 8300000, guid: 22d59a3d0c6571541bd8ebee8a87100e, type: 3}
 --- !u!114 &114000010701034384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1814,12 +1786,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 0
---- !u!114 &114000013204326980
+--- !u!114 &114000013393317128
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012420530404}
+  m_GameObject: {fileID: 1000014269779782}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c30e4f5004a93c4c9925c582043ad38, type: 3}
@@ -1880,6 +1852,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 1
+--- !u!114 &114000014134898430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014269779782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a11a24975313fe40a3bedab96d74de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrelOut: {fileID: 4000010102748202}
+  damage: 8
+  fireRate: 15
+  magazine: 40
+  regeneration: 3
+  shootFlashTime: 0.04
+  shootEffectsRenderers:
+  - {fileID: 212000013388338616}
+  - {fileID: 212000014177296310}
+  shootRandomSpriteEffects:
+  - {fileID: 21300000, guid: e8c0c21a841e47642b4eced48cd6d182, type: 3}
+  - {fileID: 21300002, guid: e8c0c21a841e47642b4eced48cd6d182, type: 3}
+  - {fileID: 21300004, guid: e8c0c21a841e47642b4eced48cd6d182, type: 3}
+  - {fileID: 21300006, guid: e8c0c21a841e47642b4eced48cd6d182, type: 3}
+  flashLightEffect: {fileID: 108000014005744566}
+  shootClip: {fileID: 8300000, guid: 22d59a3d0c6571541bd8ebee8a87100e, type: 3}
+  audioSource: {fileID: 82000012856459798}
 --- !u!124 &124000010881682874
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1991,7 +1991,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2024,7 +2024,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

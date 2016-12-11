@@ -60,7 +60,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000010294428390
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,8 +380,6 @@ GameObject:
   - 23: {fileID: 23000013305891040}
   - 95: {fileID: 95000013087205554}
   - 82: {fileID: 82000012273848426}
-  - 114: {fileID: 114000013682695156}
-  - 114: {fileID: 114000011445220872}
   m_Layer: 0
   m_Name: QuicSilver'sPistol
   m_TagString: Untagged
@@ -404,7 +402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000013033955348
 GameObject:
   m_ObjectHideFlags: 1
@@ -452,7 +450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000013243565674
 GameObject:
   m_ObjectHideFlags: 1
@@ -548,6 +546,8 @@ GameObject:
   - 114: {fileID: 114000012932339212}
   - 114: {fileID: 114000010807896980}
   - 114: {fileID: 114000012573327278}
+  - 114: {fileID: 114000010285743972}
+  - 114: {fileID: 114000010532542296}
   m_Layer: 0
   m_Name: QuicSilver
   m_TagString: Untagged
@@ -1413,7 +1413,7 @@ Light:
   serializedVersion: 7
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 0.641, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 0
   m_Range: 4
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1473,6 +1473,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 0
+--- !u!114 &114000010285743972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014173189288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a11a24975313fe40a3bedab96d74de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrelOut: {fileID: 4000011938207000}
+  damage: 25
+  fireRate: 2
+  magazine: 6
+  regeneration: 0.2
+  shootFlashTime: 0.1
+  shootEffectsRenderers:
+  - {fileID: 212000013688118070}
+  - {fileID: 212000011713411840}
+  shootRandomSpriteEffects:
+  - {fileID: 21300000, guid: 1d345ec22fb9cff4ca9fd47de778b699, type: 3}
+  - {fileID: 21300002, guid: 1d345ec22fb9cff4ca9fd47de778b699, type: 3}
+  - {fileID: 21300004, guid: 1d345ec22fb9cff4ca9fd47de778b699, type: 3}
+  - {fileID: 21300006, guid: 1d345ec22fb9cff4ca9fd47de778b699, type: 3}
+  flashLightEffect: {fileID: 108000012858445688}
+  shootClip: {fileID: 8300000, guid: 47d218a07ec756e4bb248a125d2c4e4f, type: 3}
+  audioSource: {fileID: 82000012273848426}
+--- !u!114 &114000010532542296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014173189288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585dce9d4fd9f91458af131ede16f3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000010591460012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1527,34 +1566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 0
---- !u!114 &114000011445220872
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012580837918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a11a24975313fe40a3bedab96d74de8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toy: {fileID: 114000012278414180}
-  barrelOut: {fileID: 4000011938207000}
-  damage: 25
-  fireRate: 2
-  magazine: 6
-  regeneration: 0.2
-  shootFlashTime: 0.1
-  shootEffectsRenderers:
-  - {fileID: 212000013688118070}
-  - {fileID: 212000011713411840}
-  shootRandomSpriteEffects:
-  - {fileID: 21300000, guid: 1d345ec22fb9cff4ca9fd47de778b699, type: 3}
-  - {fileID: 21300002, guid: 1d345ec22fb9cff4ca9fd47de778b699, type: 3}
-  - {fileID: 21300004, guid: 1d345ec22fb9cff4ca9fd47de778b699, type: 3}
-  - {fileID: 21300006, guid: 1d345ec22fb9cff4ca9fd47de778b699, type: 3}
-  flashLightEffect: {fileID: 108000012858445688}
-  shootClip: {fileID: 8300000, guid: 47d218a07ec756e4bb248a125d2c4e4f, type: 3}
 --- !u!114 &114000011712339334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1703,17 +1714,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 0
---- !u!114 &114000013682695156
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012580837918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 585dce9d4fd9f91458af131ede16f3a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!124 &124000013531068060
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1913,7 +1913,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1946,7 +1946,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -12,7 +12,9 @@ public class Toy : NetworkBehaviour {
 	ToyPart[] toyParts;
 
 	// Internal properties
+	[SyncVar]
 	float currentHealth;
+	[SyncVar]
 	bool dead;
 
 	//
@@ -27,34 +29,36 @@ public class Toy : NetworkBehaviour {
 	}
 
 	void Update() {
-		
-		// Regeneration
+
+		if (!isServer) {
+			return;
+		}
+
+		// Regeneration (runs on server)
 		if (!dead) {
 			currentHealth = Mathf.Clamp(currentHealth + regeneration * Time.deltaTime, 0, health);
 		}
+
 	}
 
-	void TakeDamage(Toy damager, ToyPart.Part part, float damage) {
+	// Take damage runs in the server (should be called by a Command function)
+	void TakeDamage(string damager, ToyPart.Part part, float damage) {
 		if (!dead) {
-			currentHealth -= damage;
-			print("damage " + damage);
-			print("health " + currentHealth);
-			if (currentHealth <= 0) {
-				currentHealth = 0;
-				dead = true;
+			float remainingHealth = currentHealth - damage;
+			bool died = false;
+			if (remainingHealth <= 0) {
+				remainingHealth = 0;
+				died = true;
 			}
+			currentHealth = remainingHealth;
+			dead = died;
 		}
 	}
 
+	// Reset runs on server
 	public void Reset() {
 		currentHealth = health;
 		dead = false;
-	}
-
-	public float Health {
-		get {
-			return health;
-		}
 	}
 
 	public float CurrentHealth {

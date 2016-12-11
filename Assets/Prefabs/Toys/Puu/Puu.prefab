@@ -93,7 +93,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000010657132568
 GameObject:
   m_ObjectHideFlags: 1
@@ -124,7 +124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000010981890942
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000011377324948
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +267,8 @@ GameObject:
   - 54: {fileID: 54000010515802006}
   - 114: {fileID: 114000011513854982}
   - 114: {fileID: 114000010574106006}
+  - 114: {fileID: 114000011350093988}
+  - 114: {fileID: 114000010086166416}
   - 114: {fileID: 114000012624212166}
   - 114: {fileID: 114000012101104206}
   - 114: {fileID: 114000010092772174}
@@ -538,8 +540,6 @@ GameObject:
   - 136: {fileID: 136000012361568614}
   - 82: {fileID: 82000013033571324}
   - 82: {fileID: 82000010745091480}
-  - 114: {fileID: 114000012787492750}
-  - 114: {fileID: 114000013048889042}
   m_Layer: 0
   m_Name: Puu'sMinigun
   m_TagString: Untagged
@@ -555,6 +555,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013373367656}
+  - 95: {fileID: 95000011552846514}
+  - 82: {fileID: 82000010045540220}
   m_Layer: 0
   m_Name: Puu
   m_TagString: Untagged
@@ -1576,6 +1578,80 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012878781054}
   m_Enabled: 1
+--- !u!82 &82000010045540220
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013619504742}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!82 &82000010745091480
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1748,6 +1824,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95000011552846514
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013619504742}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95000012682030174
 Animator:
   serializedVersion: 3
@@ -1775,7 +1868,7 @@ Light:
   serializedVersion: 7
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 0.641, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 0
   m_Range: 4
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1799,6 +1892,23 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114000010086166416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011417996394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd16414aeeb6c54da157b43bb3fffe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accelelerationClip: {fileID: 8300000, guid: 5d17555d10e52d045b3aaa384ed91501, type: 3}
+  desaccelelerationClip: {fileID: 8300000, guid: 92350b24da17d8a45ae4561599652ebe,
+    type: 3}
+  rotationClip: {fileID: 8300000, guid: 3747803957a28c241848762256f9fc71, type: 3}
+  effectsAudioSource: {fileID: 82000010745091480}
+  animator: {fileID: 95000012682030174}
 --- !u!114 &114000010092772174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1900,6 +2010,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 1
+--- !u!114 &114000011350093988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011417996394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a11a24975313fe40a3bedab96d74de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrelOut: {fileID: 4000010342177674}
+  damage: 4
+  fireRate: 25
+  magazine: 80
+  regeneration: 2
+  shootFlashTime: 0.03
+  shootEffectsRenderers:
+  - {fileID: 212000012617329606}
+  - {fileID: 212000010667434080}
+  shootRandomSpriteEffects:
+  - {fileID: 21300000, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  - {fileID: 21300002, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  - {fileID: 21300004, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  - {fileID: 21300006, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  flashLightEffect: {fileID: 108000010400646442}
+  shootClip: {fileID: 8300000, guid: 49ea538c2b6a55941a544a0397840331, type: 3}
+  audioSource: {fileID: 82000013033571324}
+  toy: {fileID: 0}
 --- !u!114 &114000011360111672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2037,34 +2176,6 @@ MonoBehaviour:
     i15: 39
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114000012787492750
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013516170908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a11a24975313fe40a3bedab96d74de8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toy: {fileID: 114000011513854982}
-  barrelOut: {fileID: 4000010342177674}
-  damage: 4
-  fireRate: 25
-  magazine: 80
-  regeneration: 2
-  shootFlashTime: 0.03
-  shootEffectsRenderers:
-  - {fileID: 212000012617329606}
-  - {fileID: 212000010667434080}
-  shootRandomSpriteEffects:
-  - {fileID: 21300000, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
-  - {fileID: 21300002, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
-  - {fileID: 21300004, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
-  - {fileID: 21300006, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
-  flashLightEffect: {fileID: 108000010400646442}
-  shootClip: {fileID: 8300000, guid: 49ea538c2b6a55941a544a0397840331, type: 3}
 --- !u!114 &114000012836227094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2113,22 +2224,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: 3
---- !u!114 &114000013048889042
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013516170908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd16414aeeb6c54da157b43bb3fffe7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  accelelerationClip: {fileID: 8300000, guid: 5d17555d10e52d045b3aaa384ed91501, type: 3}
-  desaccelelerationClip: {fileID: 8300000, guid: 92350b24da17d8a45ae4561599652ebe,
-    type: 3}
-  rotationClip: {fileID: 8300000, guid: 3747803957a28c241848762256f9fc71, type: 3}
-  effectsAudioSource: {fileID: 82000010745091480}
 --- !u!114 &114000013386126962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2422,7 +2517,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2455,7 +2550,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8021182349db394fb6fb9c6c6bd2678, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

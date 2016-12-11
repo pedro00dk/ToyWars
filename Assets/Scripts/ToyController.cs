@@ -44,9 +44,13 @@ public class ToyController : NetworkBehaviour {
 	// Smooths and temps
 	Vector3 smoothMovementVelocity;
 	float spineUpdateEulerAngles;
+	// Used in spine rotation sync over clients
+	[SyncVar]
+	float syncSpineUpdateEulerAngles;
 
 	// Others
 	Vector3 initialSpineJointLocalEulerAngles;
+	float lastJumpTime;
 
 	//
 
@@ -55,7 +59,7 @@ public class ToyController : NetworkBehaviour {
 		animator = GetComponent<Animator>();
 		body = GetComponent<Rigidbody>();
 
-		camera.enabled = isLocalPlayer;
+		camera.gameObject.SetActive(isLocalPlayer);
 
 		initialSpineJointLocalEulerAngles = spineJoint.localEulerAngles;
 
@@ -76,8 +80,8 @@ public class ToyController : NetworkBehaviour {
 
 		// Jump check
 		grounded = Physics.Raycast(toyLocator.position + Vector3.up * 0.05f, Vector3.down, 0.2f);
-		Debug.DrawLine(toyLocator.position + Vector3.up * 0.05f, toyLocator.position + Vector3.up * 0.05f + Vector3.down * 0.1f);
-		jumping = grounded ? Input.GetAxisRaw("Jump") * jumpSpeed : 0;
+		jumping = grounded && lastJumpTime < Time.timeSinceLevelLoad + 0.05f ? Input.GetAxisRaw("Jump") * jumpSpeed : 0;
+		lastJumpTime = jumping > 0 ? Time.timeSinceLevelLoad + 0.05f : lastJumpTime;
 
 		// Rotation check
 		rotationAxis = new Vector2(
@@ -93,6 +97,9 @@ public class ToyController : NetworkBehaviour {
 	void LateUpdate() {
 
 		if (!isLocalPlayer) {
+			Vector3 nonLocalspineJointIncrementEulerAngles = lateralSpineAxis * syncSpineUpdateEulerAngles;
+			spineJoint.localEulerAngles = initialSpineJointLocalEulerAngles + nonLocalspineJointIncrementEulerAngles; // Spine rotation
+			camSpineParent.localEulerAngles = Vector3.right * syncSpineUpdateEulerAngles; // Camera rotation
 			return;
 		}
 
@@ -111,6 +118,7 @@ public class ToyController : NetworkBehaviour {
 		spineUpdateEulerAngles = Mathf.Clamp(spineUpdateEulerAngles - rotationAxis.y * Time.deltaTime,
 			-verticalLimitMinMax.y, verticalLimitMinMax.x
 		);
+		CmdSetSpineUpdateEulerAngles(spineUpdateEulerAngles);
 		Vector3 spineJointIncrementEulerAngles = lateralSpineAxis * spineUpdateEulerAngles;
 		spineJoint.localEulerAngles = initialSpineJointLocalEulerAngles + spineJointIncrementEulerAngles; // Spine rotation
 		camSpineParent.localEulerAngles = Vector3.right * spineUpdateEulerAngles; // Camera rotation
@@ -143,5 +151,12 @@ public class ToyController : NetworkBehaviour {
 		animator.SetBool("walking", walking);
 		animator.SetBool("grounded", grounded);
 		animator.SetBool("dead", dead);
+	}
+
+	// Network
+
+	[Command]
+	void CmdSetSpineUpdateEulerAngles(float value) {
+		syncSpineUpdateEulerAngles = value;
 	}
 }
