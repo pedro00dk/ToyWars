@@ -4,23 +4,23 @@ using System.Collections;
 
 public class Player : NetworkBehaviour {
 
-	string name = "Player";
-	int id = 0;
+	string nickname = "Player";
+	string id = "000";
 	Team team = Team.TEDDY;
 
-	public void ConfigurePlayer(string name, int id, Team team) {
-		this.name = name;
+	public void ConfigurePlayer(string name, string id, Team team) {
+		this.nickname = name;
 		this.id = id;
 		this.team = team;
 	}
 
-	public string Name {
+	public string Nickname {
 		get {
-			return name;
+			return nickname;
 		}
 	}
 
-	public int Id {
+	public string Id {
 		get {
 			return id;
 		}

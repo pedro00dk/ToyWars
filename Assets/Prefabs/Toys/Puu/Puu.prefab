@@ -728,7 +728,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011999690652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.22, y: 0.45, z: -32.49}
+  m_LocalPosition: {x: 0.2, y: 0.45, z: -32.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -2038,7 +2038,6 @@ MonoBehaviour:
   flashLightEffect: {fileID: 108000010400646442}
   shootClip: {fileID: 8300000, guid: 49ea538c2b6a55941a544a0397840331, type: 3}
   audioSource: {fileID: 82000013033571324}
-  toy: {fileID: 0}
 --- !u!114 &114000011360111672
 MonoBehaviour:
   m_ObjectHideFlags: 1
