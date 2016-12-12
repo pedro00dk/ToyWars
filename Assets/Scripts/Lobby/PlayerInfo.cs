@@ -4,24 +4,41 @@ using UnityEngine.UI;
 using Prototype.NetworkLobby;
 
 public class PlayerInfo : MonoBehaviour {
-    string NickName;
-
+    
+    //User setable============================
     public Text NickNameInputField;
 
-    LobbyPlayer lp;
+
+    //InternalUse=============================
+    //Scenes Settings
+    string NickName;
+    GameObject PlayerCharacter;
+
+    //Internal Settings
+    private LobbyPlayer _lp;
+    private PlayerSelector _ps;
+    private string _defaultNickname;
 
 	// Use this for initialization
 	void Start () {
         NickName = "";
-	}
+
+        _ps = FindObjectOfType<PlayerSelector>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if(lp == null)
-            lp = FindObjectOfType<LobbyPlayer>();
+        if(_lp == null)
+        {
+            _lp = FindObjectOfType<LobbyPlayer>();
+            if(_lp)
+                _defaultNickname = _lp.playerName;
+        }
 
         verifyNickname();
+        getPlayerCharacter();
 
     }
 
@@ -31,9 +48,25 @@ public class PlayerInfo : MonoBehaviour {
             NickName = NickNameInputField.text;
         
         //if is a valid nickname, the windows desappear
-        if(lp != null && NickName != "" && !NickName.Contains(" "))
+        if(NickName != "" && NickName != null && !NickName.Contains(" "))
         {
-            lp.OnMyName(NickName);
+            NickNameInputField.color = Color.black;
+            if(_lp != null)
+            {
+                _lp.OnMyName(NickName);
+            }
         }
+        else
+        {
+            NickNameInputField.color = Color.red;
+
+            if (_lp != null)
+                _lp.OnMyName(_defaultNickname);
+        }
+    }
+
+    public void getPlayerCharacter()
+    {
+        PlayerCharacter = _ps.PlayerCharacter;
     }
 }

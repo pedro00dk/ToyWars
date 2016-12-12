@@ -11,6 +11,8 @@ public class PlayerSelector : MonoBehaviour {
     public GameObject player2;
     public GameObject player3;
 
+    public GameObject PlayerCharacter { get; set; }
+
 	// Use this for initialization
 	void Start () {
         selectedPlayer = 0;
@@ -30,18 +32,22 @@ public class PlayerSelector : MonoBehaviour {
         if(selectedPlayer == 0)
         {
             lm.gamePlayerPrefab = player0;
+            PlayerCharacter = player0;
         }
         else if(selectedPlayer == 1)
         {
             lm.gamePlayerPrefab = player1;
+            PlayerCharacter = player1;
         }
         else if (selectedPlayer == 2)
         {
             lm.gamePlayerPrefab = player2;
+            PlayerCharacter = player2;
         }
         else if (selectedPlayer == 3)
         {
             lm.gamePlayerPrefab = player3;
+            PlayerCharacter = player3;
         }
     }
 }
