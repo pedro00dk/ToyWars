@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 using UnityEngine.Networking.Types;
 using UnityEngine.Networking.Match;
 using System.Collections;
+using System.Collections.Generic;
 
 
 namespace Prototype.NetworkLobby {
@@ -231,8 +232,29 @@ namespace Prototype.NetworkLobby {
 			addPlayerButton.SetActive(localPlayerCount < maxPlayersPerConnection && _playerNumber < maxPlayers);
 		}
 
-		// ----------------- Server callbacks ------------------
+		private IDictionary<int, LobbyPlayer> mappedLobbyPlayers = new Dictionary<int, LobbyPlayer>();
 
+		public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId) {
+			GameObject selectedToy = null;
+			LobbyPlayer lobbyPlayer = null;
+			mappedLobbyPlayers.TryGetValue(conn.connectionId, out lobbyPlayer);
+			string name = lobbyPlayer.playerName;
+			if (name.Contains("puu")) {
+				selectedToy = spawnPrefabs[0];
+			} else if (name.Contains("qsilver")) {
+				selectedToy = spawnPrefabs[1];
+			} else if (name.Contains("rexi")) {
+				selectedToy = spawnPrefabs[2];
+			} else if (name.Contains("zulu")) {
+				selectedToy = spawnPrefabs[3];
+			} else {
+				selectedToy = spawnPrefabs[0];
+			}
+			GameObject obj = Instantiate(selectedToy.gameObject) as GameObject;
+			return obj;
+		}
+
+		// ----------------- Server callbacks ------------------
 		//we want to disable the button JOIN if we don't have enough player
 		//But OnLobbyClientConnect isn't called on hosting player. So we override the lobbyPlayer creation
 		public override GameObject OnLobbyServerCreateLobbyPlayer(NetworkConnection conn, short playerControllerId) {
@@ -250,6 +272,10 @@ namespace Prototype.NetworkLobby {
 					p.ToggleJoinButton(numPlayers + 1 >= minPlayers);
 				}
 			}
+
+			//
+			mappedLobbyPlayers.Add(conn.connectionId, newPlayer);
+			//
 
 			return obj;
 		}
@@ -356,22 +382,5 @@ namespace Prototype.NetworkLobby {
 			ChangeTo(mainMenuPanel);
 			infoPanel.Display("Cient error : " + (errorCode == 6 ? "timeout" : errorCode.ToString()), "Close", null);
 		}
-
-		public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader) {
-			PlayerInfo pi = FindObjectOfType<PlayerInfo>();
-
-			if (pi != null) {	
-				//Select the prefab from the spawnable objects list
-				var playerPrefab = spawnPrefabs[pi.PlayerIndex];       
-
-				// Create player object with prefab
-				var player = Instantiate(playerPrefab, Vector3.one, Quaternion.identity) as GameObject;        
-
-				// Add player object for connection
-				NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
-			}
-		}
 	}
-
-
 }
