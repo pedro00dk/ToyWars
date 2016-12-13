@@ -9,7 +9,7 @@ public class Respawn : NetworkBehaviour {
     float[] Counters;
     public int Time2Respawn = 5;
 
-    public Transform[] RespawnPosition;
+    NetworkStartPosition[] NetworkStartPositions;
 
     void Populate()
     {
@@ -23,10 +23,11 @@ public class Respawn : NetworkBehaviour {
 	// Use this for initialization
 	void Start () {
         Populate();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        NetworkStartPositions = FindObjectsOfType<NetworkStartPosition>();
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         if (FindObjectsOfType<Toy>().Length > Toys.Length)
             Populate();
@@ -42,8 +43,8 @@ public class Respawn : NetworkBehaviour {
                     Toys[i].Reset();
                     Counters[i] = 0;
 
-                    float index = Random.Range(0, 1000) % RespawnPosition.Length;
-                    Toys[i].transform.position = RespawnPosition[(int)index].position;
+                    float index = Random.Range(0, 1000) % NetworkStartPositions.Length;
+                    Toys[i].transform.position = NetworkStartPositions[(int)index].transform.position;
                 }
             }
         }
