@@ -10,7 +10,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Trivial Software
   productName: Toy Wars
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -520,9 +520,9 @@ PlayerSettings:
     Game_Performance: 0
     Hub: 0
     Purchasing: 0
-    UNet: 0
+    UNet: 1
     Unity_Ads: 0
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: 84e48a29-4839-4a04-a8cc-eeeac3f82e1b
+  projectName: Toy Wars
+  organizationId: pedro-henrique-2072151
   cloudEnabled: 0
