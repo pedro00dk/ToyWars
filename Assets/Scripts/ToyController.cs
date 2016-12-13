@@ -14,7 +14,7 @@ public class ToyController : NetworkBehaviour {
 
 	[Header("Camera components")]
 	public Transform camSpineParent;
-	public new Camera camera;
+	public Camera camera;
 
 	[Header("Movement properties")]
 	public float forwardSpeed;
