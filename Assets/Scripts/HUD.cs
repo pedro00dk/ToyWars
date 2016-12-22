@@ -9,6 +9,9 @@ public class HUD : MonoBehaviour {
 	public Slider healthSlider;
 	public Image crosshairImage;
 
+	public Text plasticCount;
+	public Text teddyCount;
+
 	// Internal properties
 	Toy localPlayerToy;
 
@@ -34,10 +37,16 @@ public class HUD : MonoBehaviour {
 			Vector3 crosshairScreenPoint = toyController.camera.WorldToScreenPoint(worldCrosshairPoint);
 			crosshairImage.rectTransform.position = crosshairScreenPoint;
 
+			Respawn respawn = FindObjectOfType<Respawn>();
+			plasticCount.text = respawn.plasticKills + "";
+			teddyCount.text = respawn.teddyKills + "";
+
 		} else {
 			ammoSlider.value = 0;
 			healthSlider.value = 0;
 			crosshairImage.rectTransform.position = new Vector3(-100, -100, 0);
+			plasticCount.text = "00";
+			teddyCount.text = "00";
 			FindLocalPlayerToy();
 		}
 	}
